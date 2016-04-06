@@ -15,6 +15,26 @@
 
 @implementation AppDelegate
 
+#pragma mark - Create Method
+
+- (void)initTabBarController{
+    TabBarViewController *tabBar = [[TabBarViewController alloc]init];
+    self.window.rootViewController = tabBar;
+}
+
+- (void)initNavigationBarInterface{
+    //导航条title属性设置
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(0x333333)}];
+    //tintColor设置
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xffffff)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x333333)];
+    //背景图片设置
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    //底部是否有阴影
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+}
+
+#pragma mark - Application Delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -24,8 +44,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     //初始化TabBarController
-    TabBarViewController *tabBar = [[TabBarViewController alloc]init];
-    self.window.rootViewController = tabBar;
+    [self initTabBarController];
+    //设置导航条样式
+    [self initNavigationBarInterface];
     
     
     return YES;

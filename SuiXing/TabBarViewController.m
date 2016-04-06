@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tabBar.tintColor = UIColorFromRGB(0xff6600);
     self.delegate = self;
     
     [self initController];
@@ -30,8 +30,8 @@
 //初始化底部TabBar
 - (void)initController{
     NSArray *vcName = @[@"IndexViewController",@"InformationViewController",@"DynamicViewController",@"MineViewController"];
-    NSArray *image = @[];
-    NSArray *selectedImage = @[];
+    NSArray *image =  @[@"tab_home_unselected",@"tab_money_unselected",@"tab_baoxiang_unselected",@"tab_person_unselected"];
+    NSArray *selectedImage = @[@"tab_home_selected",@"tab_money_selected",@"tab_baoxiang_selected",@"tab_person_selected"];
     NSArray *name = @[@"首页",@"资讯",@"动态",@"我的"];
     
     NSMutableArray *controllers = [NSMutableArray new];
@@ -41,15 +41,12 @@
         UIViewController *vc = [[class alloc]init];
         
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-        nav.tabBarItem = [[UITabBarItem alloc]initWithTitle:name[i] image:nil selectedImage:nil];
+        nav.tabBarItem = [[UITabBarItem alloc]initWithTitle:name[i] image:[UIImage imageNamed:image[i]] selectedImage:[UIImage imageNamed:selectedImage[i]]];
         
         [controllers addObject:nav];
     }
     self.viewControllers = controllers;
-    
 }
-
-#pragma mark - UITabBarControllerDelegate
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

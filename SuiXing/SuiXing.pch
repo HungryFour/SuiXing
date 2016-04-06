@@ -1,0 +1,44 @@
+//
+//  SuiXing.pch
+//  SuiXing
+//
+//  Created by 王阳 on 16/4/6.
+//  Copyright © 2016年 yang. All rights reserved.
+//
+
+#ifndef SuiXing_pch
+#define SuiXing_pch
+
+#import <UIKit/UIKit.h>
+
+//版本号
+#define MF_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
+#define MF_BUNDLE_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
+
+//常用变量
+#define DebugLog(format, ...) do {                                                                          \
+fprintf(stderr, "<%s : %d> %s\n",                                           \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                                                        \
+(NSLog)((format), ##__VA_ARGS__);                                           \
+fprintf(stderr, "-------\n");                                               \
+} while (0)
+
+#define SX_SCREEN_BOUNDS [UIScreen mainScreen].bounds
+#define SX_SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SX_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define SX_VERSION_7_HIGHER (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_0)
+#define SX_VERSION_9_OR_BELOW ([CUREENT_SYSTEM_VERSION floatValue] < 9.0 ? YES : NO)
+
+#define IS_IPHONE4 (480 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPHONE5 (568 ==[[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhone6 (667 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhone6plus (736 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+
+//颜色16进制
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
+
+#endif /* SuiXing_pch */

@@ -1,0 +1,18 @@
+PODS:
+  - Aspects (1.4.1)
+  - Masonry (0.6.4)
+  - YYKit (1.0.3):
+    - YYKit/no-arc (= 1.0.3)
+  - YYKit/no-arc (1.0.3)
+
+DEPENDENCIES:
+  - Aspects
+  - Masonry
+  - YYKit
+
+SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  YYKit: fa66d61240458f14562c33c85c91d11131e43261
+
+COCOAPODS: 0.39.0
