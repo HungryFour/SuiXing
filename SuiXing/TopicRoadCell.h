@@ -1,13 +1,13 @@
 //
-//  RoadView.h
+//  TopicRoadCell.h
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/6.
+//  Created by 王阳 on 16/4/13.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface RoadView : UIView
+@interface TopicRoadCell : UICollectionViewCell
 
 @end

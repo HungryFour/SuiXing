@@ -38,6 +38,8 @@
 		D353331A1CBE2B35001E326D /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D35333111CBE2B35001E326D /* 9.jpg */; };
 		D353331D1CBE3897001E326D /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D353331C1CBE3897001E326D /* NSTimer+Addition.m */; };
 		D35333201CBE4514001E326D /* SXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D353331F1CBE4514001E326D /* SXPageControl.m */; };
+		D35333231CBE5A7A001E326D /* NewRoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333221CBE5A7A001E326D /* NewRoadCell.m */; };
+		D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333251CBE5A8B001E326D /* TopicRoadCell.m */; };
 		D3FF9DC61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png */; };
 		D3FF9DC71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png */; };
 		D3FF9DC81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png */; };
@@ -55,8 +57,6 @@
 		D3FF9DD41CB4E281005C6A45 /* tab_person_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DC41CB4E281005C6A45 /* tab_person_unselected@2x.png */; };
 		D3FF9DD51CB4E281005C6A45 /* tab_person_unselected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DC51CB4E281005C6A45 /* tab_person_unselected@3x.png */; };
 		D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FF9DDD1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m */; };
-		D3FF9DE41CB4FCB9005C6A45 /* RoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FF9DE31CB4FCB9005C6A45 /* RoadView.m */; };
-		D3FF9DE71CB4FD05005C6A45 /* TopicRoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FF9DE61CB4FD05005C6A45 /* TopicRoadView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +130,10 @@
 		D353331C1CBE3897001E326D /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		D353331E1CBE4514001E326D /* SXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPageControl.h; sourceTree = "<group>"; };
 		D353331F1CBE4514001E326D /* SXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPageControl.m; sourceTree = "<group>"; };
+		D35333211CBE5A7A001E326D /* NewRoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRoadCell.h; sourceTree = "<group>"; };
+		D35333221CBE5A7A001E326D /* NewRoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRoadCell.m; sourceTree = "<group>"; };
+		D35333241CBE5A8B001E326D /* TopicRoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicRoadCell.h; sourceTree = "<group>"; };
+		D35333251CBE5A8B001E326D /* TopicRoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicRoadCell.m; sourceTree = "<group>"; };
 		D3FF9DB31CB4E07C005C6A45 /* SuiXing.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuiXing.pch; sourceTree = "<group>"; };
 		D3FF9DB61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_baoxiang_selected@2x.png"; sourceTree = "<group>"; };
 		D3FF9DB71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_baoxiang_selected@3x.png"; sourceTree = "<group>"; };
@@ -149,10 +153,6 @@
 		D3FF9DC51CB4E281005C6A45 /* tab_person_unselected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_person_unselected@3x.png"; sourceTree = "<group>"; };
 		D3FF9DDC1CB4E5A5005C6A45 /* SXViewControllerInteceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXViewControllerInteceptor.h; sourceTree = "<group>"; };
 		D3FF9DDD1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXViewControllerInteceptor.m; sourceTree = "<group>"; };
-		D3FF9DE21CB4FCB9005C6A45 /* RoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadView.h; sourceTree = "<group>"; };
-		D3FF9DE31CB4FCB9005C6A45 /* RoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadView.m; sourceTree = "<group>"; };
-		D3FF9DE51CB4FD05005C6A45 /* TopicRoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicRoadView.h; sourceTree = "<group>"; };
-		D3FF9DE61CB4FD05005C6A45 /* TopicRoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicRoadView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,10 +310,10 @@
 			children = (
 				D35332F11CBDEF93001E326D /* SXScrollCell.h */,
 				D35332F21CBDEF93001E326D /* SXScrollCell.m */,
-				D3FF9DE21CB4FCB9005C6A45 /* RoadView.h */,
-				D3FF9DE31CB4FCB9005C6A45 /* RoadView.m */,
-				D3FF9DE51CB4FD05005C6A45 /* TopicRoadView.h */,
-				D3FF9DE61CB4FD05005C6A45 /* TopicRoadView.m */,
+				D35333211CBE5A7A001E326D /* NewRoadCell.h */,
+				D35333221CBE5A7A001E326D /* NewRoadCell.m */,
+				D35333241CBE5A8B001E326D /* TopicRoadCell.h */,
+				D35333251CBE5A8B001E326D /* TopicRoadCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -695,9 +695,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE858371C965A00007E9B04 /* TabBarViewController.m in Sources */,
+				D35333231CBE5A7A001E326D /* NewRoadCell.m in Sources */,
 				2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */,
 				D35332FB1CBDF0AA001E326D /* AdDataModel.m in Sources */,
-				D3FF9DE71CB4FD05005C6A45 /* TopicRoadView.m in Sources */,
 				2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */,
 				D35333071CBE268F001E326D /* SXScrollModel.m in Sources */,
 				D353331D1CBE3897001E326D /* NSTimer+Addition.m in Sources */,
@@ -705,9 +705,9 @@
 				D35333041CBE14C2001E326D /* SXScrollView.m in Sources */,
 				D35333201CBE4514001E326D /* SXPageControl.m in Sources */,
 				D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */,
+				D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */,
 				D35332F31CBDEF93001E326D /* SXScrollCell.m in Sources */,
 				2FE858331C965954007E9B04 /* IndexViewController.m in Sources */,
-				D3FF9DE41CB4FCB9005C6A45 /* RoadView.m in Sources */,
 				2FE858431C965D28007E9B04 /* InformationViewController.m in Sources */,
 				2FE858401C965D18007E9B04 /* DynamicViewController.m in Sources */,
 				D35332FD1CBDF0AA001E326D /* AdScrollView.m in Sources */,

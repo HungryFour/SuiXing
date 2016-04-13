@@ -8,6 +8,7 @@
 
 #import "IndexViewController.h"
 #import "SXScrollCell.h"
+#import "NewRoadCell.h"
 
 @interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -37,7 +38,6 @@
     
     self.title = @"首页";
     [self.view addSubview:self.collectionView];
-    [self.collectionView registerClass:[SXScrollCell class] forCellWithReuseIdentifier:@"SXScrollCell"];
     // Do any additional setup after loading the view.
 }
 
@@ -47,16 +47,38 @@
     return 1;
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 3;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIde = @"SXScrollCell";
-    SXScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
-    return cell;
+    if (indexPath.section == 0) {
+        static NSString *cellIde = @"SXScrollCell";
+        SXScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
+        return cell;
+    }else{
+        static NSString *cellIde = @"NewRoadCell";
+        NewRoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
+        return cell;
+    }
+
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(SX_SCREEN_WIDTH, 260);
+    if (indexPath.section == 0) {
+        return CGSizeMake(SX_SCREEN_WIDTH, 260);
+    }
+    return CGSizeMake(SX_SCREEN_WIDTH, 200);
+
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    if (section == 0) {
+        return UIEdgeInsetsZero;
+    }
+    return UIEdgeInsetsMake(30, 0, 0, 0);
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -77,6 +99,8 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
+        [self.collectionView registerClass:[SXScrollCell class] forCellWithReuseIdentifier:@"SXScrollCell"];
+        [self.collectionView registerClass:[NewRoadCell class] forCellWithReuseIdentifier:@"NewRoadCell"];
     }
     return _collectionView;
 }
