@@ -110,7 +110,7 @@
         doubleClick.numberOfTapsRequired = 2;
         [view addGestureRecognizer:doubleClick];
         
-        if (i == 1) {
+        if (i == 0) {
             self.currentView = view;
         }
         [self addSubview:view];
@@ -159,19 +159,56 @@
     }
 }
 
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
+}
+
+
 - (void)doubleTapClick:(UITapGestureRecognizer *)gesture{
-    if (!_isTransform) {
-        _isTransform = YES;
-        [self.timer pauseTimer];
-        [UIView animateWithDuration:1.0f animations:^{
-            self.currentView.transform =CGAffineTransformMakeScale(1.5, 1.5);
-        }];
-    }else{
-        _isTransform = NO;
-        [self.timer resumeTimerAfterTimeInterval:3.0f];
-        [UIView animateWithDuration:1.0f animations:^{
-            self.currentView.transform =CGAffineTransformMakeScale(1.0, 1.0);
-        }];    }
+//    
+//    UIViewController *vc = [self getCurrentVC];
+//    
+//    if (!_isTransform) {
+//        _isTransform = YES;
+//        //[self.timer pauseTimer];
+//        [UIView animateWithDuration:1.0f animations:^{
+//            self.currentView.frame = CGRectMake(vc.view.frame.origin.x, 260, SX_SCREEN_WIDTH, 260);
+//            //[vc.view addSubview:self.currentView];
+//        }];
+//    }else{
+//        _isTransform = NO;
+//        //[self.timer resumeTimer];
+//        [UIView animateWithDuration:1.0f animations:^{
+//            self.currentView.frame = CGRectMake(vc.view.frame.origin.x, 0, SX_SCREEN_WIDTH, 260);
+//        }completion:^(BOOL finished) {
+//            [vc.view willRemoveSubview:self.currentView];
+//        }];
+//    }
 }
 
 #pragma mark - Setter and Getter
