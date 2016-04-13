@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NSTimer+Addition.h"
+
 //版本号
 #define MF_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define MF_BUNDLE_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
