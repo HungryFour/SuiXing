@@ -9,6 +9,7 @@
 #import "SXScrollCell.h"
 #import "SXScrollView.h"
 #import "SXScrollModel.h"
+#import "SelectRoadViewController.h"
 
 @interface SXScrollCell () <SXScrollViewDelegate,SXSrollViewDataSource>
 
@@ -56,8 +57,38 @@
 
 #pragma mark - Private method
 
+- (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
+}
+
 - (void)setOutClick:(UIButton *)button{
-    NSLog(@"Go Go Go");
+    SelectRoadViewController *vc = [[SelectRoadViewController alloc]init];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Property

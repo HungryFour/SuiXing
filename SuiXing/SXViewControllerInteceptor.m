@@ -35,9 +35,18 @@
             [self loadView:[aspectInfo instance]];
         } error:nil];
         
-        [UIViewController aspect_hookSelector:@selector(viewDidLoad) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
-            [self viewDidLoad:[aspectInfo instance]];
+        [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
+            [self viewWillAppear:[aspectInfo instance]];
         } error:nil];
+        
+        [UIViewController aspect_hookSelector:@selector(viewWillDisappear:) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
+            [self viewWillDisappear:[aspectInfo instance]];
+        } error:nil];
+        
+        [UIViewController aspect_hookSelector:@selector(init) withOptions:AspectPositionAfter usingBlock:^(id<AspectInfo>aspectInfo){
+            [self init:[aspectInfo instance]];
+        } error:nil];
+        
     }
     return self;
 }
@@ -46,10 +55,20 @@
     DebugLog(@"%@ load view run",[viewController class]);
 }
 
-- (void)viewDidLoad:(UIViewController *)viewController{
+- (void)viewWillAppear:(UIViewController *)viewController{
     if ([viewController isKindOfClass:[IndexViewController class]]) {
         viewController.navigationController.navigationBar.hidden = YES;
     }
+}
+
+- (void)viewWillDisappear:(UIViewController *)viewController{
+    if ([viewController isKindOfClass:[IndexViewController class]]) {
+        viewController.navigationController.navigationBar.hidden = NO;
+    }
+}
+
+- (void)init:(UIViewController *)viewController{
+    viewController.hidesBottomBarWhenPushed = YES;
 }
 
 @end

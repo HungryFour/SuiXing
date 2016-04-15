@@ -12,6 +12,8 @@
 #import <UIKit/UIKit.h>
 
 #import "NSTimer+Addition.h"
+#import <Masonry.h>
+#import "UIView+Addition.h"
 
 //版本号
 #define MF_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
@@ -40,7 +42,5 @@ fprintf(stderr, "-------\n");                                               \
 
 //颜色16进制
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
-
 
 #endif /* SuiXing_pch */

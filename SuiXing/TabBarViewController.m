@@ -39,7 +39,6 @@
 
         Class class = NSClassFromString(vcName[i]);
         UIViewController *vc = [[class alloc]init];
-        
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
         nav.tabBarItem = [[UITabBarItem alloc]initWithTitle:name[i] image:[UIImage imageNamed:image[i]] selectedImage:[UIImage imageNamed:selectedImage[i]]];
         

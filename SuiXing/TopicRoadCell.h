@@ -10,4 +10,7 @@
 
 @interface TopicRoadCell : UICollectionViewCell
 
+@property (strong, nonatomic) UIImageView *imageView;
+
+
 @end

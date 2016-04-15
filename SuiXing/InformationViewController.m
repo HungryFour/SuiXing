@@ -14,6 +14,14 @@
 
 @implementation InformationViewController
 
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"资讯";

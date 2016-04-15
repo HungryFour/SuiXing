@@ -1,31 +1,22 @@
 //
-//  MineViewController.m
+//  SelectRoadViewController.m
 //  SuiXing
 //
-//  Created by yangyang on 16/3/14.
+//  Created by 王阳 on 16/4/15.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
-#import "MineViewController.h"
+#import "SelectRoadViewController.h"
 
-@interface MineViewController ()
+@interface SelectRoadViewController ()
 
 @end
 
-@implementation MineViewController
-
-- (instancetype)init{
-    self = [super init];
-    if (self) {
-        self.hidesBottomBarWhenPushed = NO;
-    }
-    return self;
-}
+@implementation SelectRoadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"我的";
-
+    self.title = @"选择路线";
     // Do any additional setup after loading the view.
 }
 

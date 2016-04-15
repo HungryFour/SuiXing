@@ -9,17 +9,28 @@
 #import "IndexViewController.h"
 #import "SXScrollCell.h"
 #import "NewRoadCell.h"
+#import "SXIndexHeaderView.h"
+#import "TopicRoadCell.h"
 
 @interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
+@property (strong, nonatomic) NSArray *imageArray;
 
 @end
 
 @implementation IndexViewController
 
 #pragma mark - life cycle
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.hidesBottomBarWhenPushed = NO;
+    }
+    return self;
+}
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -41,9 +52,12 @@
     // Do any additional setup after loading the view.
 }
 
-#pragma mark - UICollectionDataSource
+#pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (section == 2) {
+        return self.imageArray.count;
+    }
     return 1;
 }
 
@@ -51,14 +65,34 @@
     return 3;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableView = nil;
+    if (kind == UICollectionElementKindSectionHeader) {
+        SXIndexHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
+        if (indexPath.section == 1) {
+            headerView.titleLabel.text = @"最新路线";
+        }else if (indexPath.section == 2) {
+            headerView.titleLabel.text = @"主题路线";
+        }
+        reusableView = headerView;
+    }
+    
+    return reusableView;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         static NSString *cellIde = @"SXScrollCell";
         SXScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
         return cell;
-    }else{
+    }else if(indexPath.section == 1){
         static NSString *cellIde = @"NewRoadCell";
         NewRoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
+        return cell;
+    }else{
+        static NSString *cellIde = @"TopicRoadCell";
+        TopicRoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
+        cell.imageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
         return cell;
     }
 
@@ -75,13 +109,29 @@
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return UIEdgeInsetsZero;
+    }else{
+        return UIEdgeInsetsMake(10, 0, 0, 0);
     }
-    return UIEdgeInsetsMake(30, 0, 0, 0);
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeZero;
+    }else{
+        return CGSizeMake(SX_SCREEN_WIDTH, 50);
+    }
+}
+
+
 #pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 2) {
+        NSLog(@"click item : %ld", indexPath.row);
+    }
+}
 
 #pragma mark - Property
 
@@ -99,12 +149,21 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [self.collectionView registerClass:[SXScrollCell class] forCellWithReuseIdentifier:@"SXScrollCell"];
-        [self.collectionView registerClass:[NewRoadCell class] forCellWithReuseIdentifier:@"NewRoadCell"];
+        _collectionView.showsVerticalScrollIndicator = NO;
+        [_collectionView registerClass:[SXScrollCell class] forCellWithReuseIdentifier:@"SXScrollCell"];
+        [_collectionView registerClass:[NewRoadCell class] forCellWithReuseIdentifier:@"NewRoadCell"];
+        [_collectionView registerClass:[SXIndexHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+        [_collectionView registerClass:[TopicRoadCell class] forCellWithReuseIdentifier:@"TopicRoadCell"];
+
     }
     return _collectionView;
 }
 
+
+- (NSArray *)imageArray{
+    _imageArray = @[@"2.jpg",@"3.jpg",@"4.jpg",@"5.jpg",@"6.jpg"];
+    return _imageArray;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
