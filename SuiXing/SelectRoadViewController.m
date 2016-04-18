@@ -8,16 +8,35 @@
 
 #import "SelectRoadViewController.h"
 
-@interface SelectRoadViewController ()
+@interface SelectRoadViewController () <UIViewControllerTransitioningDelegate>
 
 @end
 
 @implementation SelectRoadViewController
 
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.transitioningDelegate = self;
+        self.modalPresentationStyle = UIModalPresentationCustom;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"选择路线";
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    return [SXPresentTransition transitionWithTransitionType:SXPresentTransitionPresent];
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+     return [SXPresentTransition transitionWithTransitionType:SXPresentTransitionDismiss];
 }
 
 - (void)didReceiveMemoryWarning {

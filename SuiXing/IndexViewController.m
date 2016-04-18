@@ -12,11 +12,12 @@
 #import "SXIndexHeaderView.h"
 #import "TopicRoadCell.h"
 
-@interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *imageArray;
+@property (strong, nonatomic) UIView *bgView;
 
 @end
 
@@ -48,8 +49,19 @@
     [super viewDidLoad];
     
     self.title = @"首页";
+    [self.view addSubview:self.bgView];
     [self.view addSubview:self.collectionView];
     // Do any additional setup after loading the view.
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    CGFloat offset = scrollView.contentOffset.y;
+    if (offset < -50) {
+        scrollView.contentOffset = CGPointMake(0, -50);
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -146,7 +158,7 @@
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SX_SCREEN_WIDTH, SX_SCREEN_HEIGHT) collectionViewLayout:self.flowLayout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator = NO;
@@ -163,6 +175,23 @@
 - (NSArray *)imageArray{
     _imageArray = @[@"2.jpg",@"3.jpg",@"4.jpg",@"5.jpg",@"6.jpg"];
     return _imageArray;
+}
+
+- (UIView *)bgView{
+    if (!_bgView) {
+        _bgView = [[UIView alloc]init];
+        _bgView.frame = CGRectMake(0, 0, SX_SCREEN_WIDTH, 50);
+        _bgView.backgroundColor = UIColorFromRGB(0xf3f3f3);
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, _bgView.frame.size.width, _bgView.frame.size.height)];
+        label.text = @"随行，伴您旅行";
+        label.font = [UIFont fontWithName:@"zapfino" size:18];
+        label.textColor = UIColorFromRGB(0x666666);
+        label.textAlignment = NSTextAlignmentCenter;
+        [_bgView addSubview:label];
+        
+    }
+    return _bgView;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

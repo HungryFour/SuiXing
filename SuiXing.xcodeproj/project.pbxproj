@@ -44,6 +44,8 @@
 		D353332C1CBF46C4001E326D /* NewRoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D353332B1CBF46C4001E326D /* NewRoadModel.m */; };
 		D3FE79CE1CC0C413004A3663 /* SelectRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */; };
 		D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D01CC0C6E2004A3663 /* UIView+Addition.m */; };
+		D3FE79D41CC0DC96004A3663 /* BrowsePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D31CC0DC96004A3663 /* BrowsePictureViewController.m */; };
+		D3FE79D71CC0DCBA004A3663 /* SXPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D61CC0DCBA004A3663 /* SXPresentTransition.m */; };
 		D3FF9DC61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png */; };
 		D3FF9DC71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png */; };
 		D3FF9DC81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FF9DB81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png */; };
@@ -146,6 +148,10 @@
 		D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoadViewController.m; sourceTree = "<group>"; };
 		D3FE79CF1CC0C6E2004A3663 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
 		D3FE79D01CC0C6E2004A3663 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		D3FE79D21CC0DC96004A3663 /* BrowsePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowsePictureViewController.h; sourceTree = "<group>"; };
+		D3FE79D31CC0DC96004A3663 /* BrowsePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowsePictureViewController.m; sourceTree = "<group>"; };
+		D3FE79D51CC0DCBA004A3663 /* SXPresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPresentTransition.h; sourceTree = "<group>"; };
+		D3FE79D61CC0DCBA004A3663 /* SXPresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPresentTransition.m; sourceTree = "<group>"; };
 		D3FF9DB31CB4E07C005C6A45 /* SuiXing.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuiXing.pch; sourceTree = "<group>"; };
 		D3FF9DB61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_baoxiang_selected@2x.png"; sourceTree = "<group>"; };
 		D3FF9DB71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_baoxiang_selected@3x.png"; sourceTree = "<group>"; };
@@ -304,8 +310,12 @@
 			children = (
 				2FE858311C965954007E9B04 /* IndexViewController.h */,
 				2FE858321C965954007E9B04 /* IndexViewController.m */,
+				D3FE79D21CC0DC96004A3663 /* BrowsePictureViewController.h */,
+				D3FE79D31CC0DC96004A3663 /* BrowsePictureViewController.m */,
 				D3FE79CC1CC0C413004A3663 /* SelectRoadViewController.h */,
 				D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */,
+				D3FE79D51CC0DCBA004A3663 /* SXPresentTransition.h */,
+				D3FE79D61CC0DCBA004A3663 /* SXPresentTransition.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -721,11 +731,13 @@
 				2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */,
 				D35332FB1CBDF0AA001E326D /* AdDataModel.m in Sources */,
 				2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */,
+				D3FE79D71CC0DCBA004A3663 /* SXPresentTransition.m in Sources */,
 				D35333071CBE268F001E326D /* SXScrollModel.m in Sources */,
 				D353331D1CBE3897001E326D /* NSTimer+Addition.m in Sources */,
 				2FE857F81C9657A6007E9B04 /* main.m in Sources */,
 				D35333041CBE14C2001E326D /* SXScrollView.m in Sources */,
 				D35333201CBE4514001E326D /* SXPageControl.m in Sources */,
+				D3FE79D41CC0DC96004A3663 /* BrowsePictureViewController.m in Sources */,
 				D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */,
 				D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */,
 				D35332F31CBDEF93001E326D /* SXScrollCell.m in Sources */,
