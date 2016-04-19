@@ -11,6 +11,6 @@
 @interface TopicRoadCell : UICollectionViewCell
 
 @property (strong, nonatomic) UIImageView *imageView;
-
+@property (strong, nonatomic) UILabel *imageNameLabel;
 
 @end

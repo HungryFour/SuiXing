@@ -19,9 +19,26 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.imageView];
-        
+        [self addSubview:self.imageNameLabel];
+        [self updateLabelConstraint];
     }
     return self;
+}
+
+- (void)updateLabelConstraint{
+    [self.imageNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.mas_centerY);
+        make.centerX.equalTo(self.mas_centerX);
+    }];
+}
+
+- (UILabel *)imageNameLabel{
+    if (!_imageNameLabel) {
+        _imageNameLabel = [[UILabel alloc]init];
+        _imageNameLabel.textColor = UIColorFromRGB(0xffffff);
+        _imageNameLabel.font = [UIFont systemFontOfSize:18];
+    }
+    return _imageNameLabel;
 }
 
 - (UIImageView *)imageView{

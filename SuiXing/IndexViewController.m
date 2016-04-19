@@ -83,6 +83,8 @@
         SXIndexHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
         if (indexPath.section == 1) {
             headerView.titleLabel.text = @"最新路线";
+            headerView.rightLabel.text = @"查看更多 >";
+            
         }else if (indexPath.section == 2) {
             headerView.titleLabel.text = @"主题路线";
         }
@@ -105,6 +107,7 @@
         static NSString *cellIde = @"TopicRoadCell";
         TopicRoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
         cell.imageView.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
+        cell.imageNameLabel.text = [NSString stringWithFormat:@"随行图片%ld",indexPath.item];
         return cell;
     }
 
@@ -115,6 +118,8 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         return CGSizeMake(SX_SCREEN_WIDTH, 260);
+    }else if (indexPath.section == 1){
+        return CGSizeMake(SX_SCREEN_WIDTH, 100);
     }
     return CGSizeMake(SX_SCREEN_WIDTH, 200);
 
@@ -131,9 +136,10 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return CGSizeZero;
-    }else{
+    }else if(section == 1){
+        return CGSizeMake(SX_SCREEN_WIDTH, 30);
+    }else
         return CGSizeMake(SX_SCREEN_WIDTH, 50);
-    }
 }
 
 
@@ -157,7 +163,7 @@
 
 - (UICollectionView *)collectionView{
     if (!_collectionView) {
-        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SX_SCREEN_WIDTH, SX_SCREEN_HEIGHT) collectionViewLayout:self.flowLayout];
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SX_SCREEN_WIDTH, SX_SCREEN_HEIGHT - 49) collectionViewLayout:self.flowLayout];
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

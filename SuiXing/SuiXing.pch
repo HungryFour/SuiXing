@@ -15,6 +15,7 @@
 #import <Masonry.h>
 #import "UIView+Addition.h"
 #import "SXPresentTransition.h"
+#import "UIView+extension.h"
 
 //版本号
 #define MF_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]

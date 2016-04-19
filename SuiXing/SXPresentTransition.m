@@ -38,12 +38,12 @@
 - (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
     
 }
-
-+ (instancetype)transitionWithTransitionType:(SXPresentTransitionType)type{
-    
-}
-+ (instancetype)initWithTransitionType:(SXPresentTransitionType)type{
-    
-}
+//
+//+ (instancetype)transitionWithTransitionType:(SXPresentTransitionType)type{
+//    
+//}
+//+ (instancetype)initWithTransitionType:(SXPresentTransitionType)type{
+//    
+//}
 
 @end

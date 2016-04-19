@@ -42,6 +42,8 @@
 		D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333251CBE5A8B001E326D /* TopicRoadCell.m */; };
 		D35333291CBF4137001E326D /* SXIndexHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333281CBF4137001E326D /* SXIndexHeaderView.m */; };
 		D353332C1CBF46C4001E326D /* NewRoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D353332B1CBF46C4001E326D /* NewRoadModel.m */; };
+		D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */; };
+		D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12E1CC6127100C36C0E /* UIView+extension.m */; };
 		D3FE79CE1CC0C413004A3663 /* SelectRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */; };
 		D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D01CC0C6E2004A3663 /* UIView+Addition.m */; };
 		D3FE79D41CC0DC96004A3663 /* BrowsePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D31CC0DC96004A3663 /* BrowsePictureViewController.m */; };
@@ -144,6 +146,10 @@
 		D35333281CBF4137001E326D /* SXIndexHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXIndexHeaderView.m; sourceTree = "<group>"; };
 		D353332A1CBF46C4001E326D /* NewRoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRoadModel.h; sourceTree = "<group>"; };
 		D353332B1CBF46C4001E326D /* NewRoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRoadModel.m; sourceTree = "<group>"; };
+		D3F6C12A1CC6112900C36C0E /* InfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeaderCell.h; sourceTree = "<group>"; };
+		D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeaderCell.m; sourceTree = "<group>"; };
+		D3F6C12D1CC6127100C36C0E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
+		D3F6C12E1CC6127100C36C0E /* UIView+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extension.m"; sourceTree = "<group>"; };
 		D3FE79CC1CC0C413004A3663 /* SelectRoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoadViewController.h; sourceTree = "<group>"; };
 		D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoadViewController.m; sourceTree = "<group>"; };
 		D3FE79CF1CC0C6E2004A3663 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
@@ -281,8 +287,9 @@
 		2FE8582A1C96583F007E9B04 /* 资讯 */ = {
 			isa = PBXGroup;
 			children = (
-				2FE858411C965D28007E9B04 /* InformationViewController.h */,
-				2FE858421C965D28007E9B04 /* InformationViewController.m */,
+				D3F6C1291CC60F7800C36C0E /* Models */,
+				D3F6C1281CC60F7200C36C0E /* Views */,
+				D3F6C1271CC60F6800C36C0E /* Controller */,
 			);
 			name = "资讯";
 			sourceTree = "<group>";
@@ -435,6 +442,31 @@
 			path = ScrollViewImage;
 			sourceTree = "<group>";
 		};
+		D3F6C1271CC60F6800C36C0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FE858411C965D28007E9B04 /* InformationViewController.h */,
+				2FE858421C965D28007E9B04 /* InformationViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D3F6C1281CC60F7200C36C0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3F6C12A1CC6112900C36C0E /* InfoHeaderCell.h */,
+				D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D3F6C1291CC60F7800C36C0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D3FF9DB41CB4E278005C6A45 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +534,8 @@
 		D3FF9DDA1CB4E479005C6A45 /* SXCategory */ = {
 			isa = PBXGroup;
 			children = (
+				D3F6C12D1CC6127100C36C0E /* UIView+extension.h */,
+				D3F6C12E1CC6127100C36C0E /* UIView+extension.m */,
 				D353331B1CBE3897001E326D /* NSTimer+Addition.h */,
 				D353331C1CBE3897001E326D /* NSTimer+Addition.m */,
 				D3FE79CF1CC0C6E2004A3663 /* UIView+Addition.h */,
@@ -725,8 +759,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */,
+				D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */,
 				2FE858371C965A00007E9B04 /* TabBarViewController.m in Sources */,
 				D35333231CBE5A7A001E326D /* NewRoadCell.m in Sources */,
+				D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */,
 				D353332C1CBF46C4001E326D /* NewRoadModel.m in Sources */,
 				2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */,
 				D35332FB1CBDF0AA001E326D /* AdDataModel.m in Sources */,

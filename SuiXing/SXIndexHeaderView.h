@@ -11,5 +11,6 @@
 @interface SXIndexHeaderView : UICollectionReusableView
 
 @property (strong, nonatomic) UILabel *titleLabel;
+@property (strong, nonatomic) UILabel *rightLabel;
 
 @end

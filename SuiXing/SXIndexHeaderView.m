@@ -10,7 +10,6 @@
 
 @interface SXIndexHeaderView ()
 
-@property (strong, nonatomic) UIImageView *rightView;
 @property (strong, nonatomic) UILabel *topLabel;
 @property (strong, nonatomic) UILabel *bottomLabel;
 
@@ -21,10 +20,9 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.titleLabel];
-        [self addSubview:self.rightView];
-        [self addSubview:self.topLabel];
-        [self addSubview:self.bottomLabel];
+        [self addSubview:self.rightLabel];
         [self updateHeaderConstrains];
 
     }
@@ -34,7 +32,8 @@
 #pragma mark - Constrains
 
 - (void)updateHeaderConstrains{
-    [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.mas_right).offset(-10);
         make.centerY.equalTo(self.mas_centerY);
     }];
@@ -48,18 +47,23 @@
 
 #pragma mark - Property
 
-- (UIImageView *)rightView{
-    if (!_rightView) {
-        _rightView = [[UIImageView alloc]init];
+- (UILabel *)rightLabel{
+    if (!_rightLabel) {
+        _rightLabel = [[UILabel alloc]init];
+        _rightLabel.textColor = UIColorFromRGB(0x643820);
+        _rightLabel.textAlignment = NSTextAlignmentCenter;
+        _rightLabel.font = [UIFont systemFontOfSize:12];
     }
-    return _rightView;
+    
+    return _rightLabel;
 }
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.textColor = UIColorFromRGB(0x666666);
+        _titleLabel.textColor = UIColorFromRGB(0x643820);
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont systemFontOfSize:15];
     }
     return _titleLabel;
 }

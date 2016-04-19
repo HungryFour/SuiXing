@@ -9,6 +9,8 @@
 #import "NewRoadCell.h"
 #import "NewRoadModel.h"
 
+
+
 @interface NewRoadCell () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) NSArray *imageArray;
@@ -32,12 +34,13 @@
 
 
 - (void)initGui{
-    CGFloat edge = 20;
-    CGFloat width = (SX_SCREEN_WIDTH - 20*3) / 2;
-    CGFloat height = self.bounds.size.height - 2 * 20;
+    CGFloat edge = 10;
+    CGFloat topEdge = 5;
+    CGFloat width = self.bounds.size.height - 2 * topEdge;
+    self.scrollView.contentSize = CGSizeMake(width * _imageArray.count + (_imageArray.count + 1) * edge, self.bounds.size.height);
     for (int i = 0; i < _imageArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setFrame:CGRectMake(edge + (edge + width) * i , edge, width, height)];
+        [button setFrame:CGRectMake(edge + (edge + width) * i , topEdge, width, width)];
         [button setBackgroundImage:[UIImage imageNamed:_imageArray[i]] forState:UIControlStateNormal];
         [button setBackgroundColor:[UIColor blueColor]];
         button.tag = i;
@@ -57,9 +60,8 @@
 - (UIScrollView *)scrollView{
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
-        _scrollView.pagingEnabled = YES;
         _scrollView.backgroundColor = [UIColor whiteColor];
-        _scrollView.contentSize = CGSizeMake((self.bounds.size.width / 2) * _imageArray.count, self.bounds.size.height);
+        _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate =self;
     }
     return _scrollView;
