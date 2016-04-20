@@ -11,10 +11,10 @@
 #import "NewRoadCell.h"
 #import "SXIndexHeaderView.h"
 #import "TopicRoadCell.h"
+#import "BrowsePictureViewController.h"
 
 @interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 
-@property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *imageArray;
 @property (strong, nonatomic) UIView *bgView;
@@ -146,7 +146,11 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    _currentIndexPath = indexPath;
     if (indexPath.section == 2) {
+        BrowsePictureViewController *vc = [[BrowsePictureViewController alloc]init];
+        self.navigationController.delegate = vc;
+        [self.navigationController pushViewController:vc animated:YES];
         NSLog(@"click item : %ld", indexPath.row);
     }
 }

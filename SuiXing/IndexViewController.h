@@ -10,4 +10,8 @@
 
 @interface IndexViewController : UIViewController
 
+//记录当前点击的indexPath
+@property (strong, nonatomic) NSIndexPath *currentIndexPath;
+@property (strong, nonatomic) UICollectionView *collectionView;
+
 @end

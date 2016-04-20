@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger,SXPresentTransitionType){
-    SXPresentTransitionPresent = 0,
-    SXPresentTransitionDismiss
+    SXPresentTransitionPush = 0,
+    SXPresentTransitionPop
 };
 
 @interface SXPresentTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
-@property (assign, nonatomic) SXPresentTransitionType type;
 
 + (instancetype)transitionWithTransitionType:(SXPresentTransitionType)type;
-+ (instancetype)initWithTransitionType:(SXPresentTransitionType)type;
+- (instancetype)initWithTransitionType:(SXPresentTransitionType)type;
 
 @end

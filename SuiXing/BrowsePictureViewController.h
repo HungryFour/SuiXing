@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BrowsePictureViewController : UIViewController
+@interface BrowsePictureViewController : UIViewController <UINavigationControllerDelegate>
+
+@property (strong, nonatomic) UIImageView *imageView;
 
 @end

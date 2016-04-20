@@ -13,4 +13,6 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UILabel *rightLabel;
 
+@property (strong, nonatomic) UIColor *bgColor;
+
 @end

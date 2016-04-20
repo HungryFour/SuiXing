@@ -20,7 +20,8 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        _bgColor = [UIColor whiteColor];
+        self.backgroundColor = _bgColor;
         [self addSubview:self.titleLabel];
         [self addSubview:self.rightLabel];
         [self updateHeaderConstrains];
@@ -46,6 +47,11 @@
 
 
 #pragma mark - Property
+
+- (void)setBgColor:(UIColor *)bgColor{
+    _bgColor = bgColor;
+    self.backgroundColor = _bgColor;
+}
 
 - (UILabel *)rightLabel{
     if (!_rightLabel) {

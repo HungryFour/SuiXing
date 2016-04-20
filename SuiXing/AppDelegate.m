@@ -24,12 +24,13 @@
 
 - (void)initNavigationBarInterface{
     //导航条title属性设置
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(0x333333)}];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(0xffffff)}];
     //tintColor设置
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xffffff)];
-    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x333333)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x118AD2)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0xffffff)];
+    [[UINavigationBar appearance] setBackgroundColor:UIColorFromRGB(0x118AD2)];
     //背景图片设置
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    //[[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     //底部是否有阴影
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 }
