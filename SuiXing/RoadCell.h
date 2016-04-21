@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoadModel.h"
 
 @interface RoadCell : UICollectionViewCell
+
+@property (strong, nonatomic) RoadModel *model;
 
 @end

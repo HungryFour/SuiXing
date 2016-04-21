@@ -11,5 +11,6 @@
 @interface RoadFooterView : UICollectionReusableView
 
 @property (strong, nonatomic) UIButton *addRoadButton;
+@property (strong, nonatomic) UIButton *commitButton;
 
 @end

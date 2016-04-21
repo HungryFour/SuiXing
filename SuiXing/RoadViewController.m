@@ -6,14 +6,16 @@
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
-#import "SelectRoadViewController.h"
+#import "RoadViewController.h"
 #import "PersonCell.h"
 #import "RoadCell.h"
 #import "SXIndexHeaderView.h"
 #import "RoadFooterView.h"
 #import "RoadModel.h"
+#import "SetRoadViewController.h"
+#import "CommitOrderViewController.h"
 
-@interface SelectRoadViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface RoadViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
@@ -21,7 +23,12 @@
 
 @end
 
-@implementation SelectRoadViewController
+@implementation RoadViewController
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,12 +36,36 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
     
+    RoadModel *model = [[RoadModel alloc]init];
+    NSDictionary *dict= [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"number",@"北京",@"startPoint",@"上海",@"endPoint",@"飞机",@"tripType",@"2016-1-1",@"startTime",@"2016-1-2",@"startLiveTime",@"2016-1-3",@"endLiveTime",@"如家",@"hotel", nil];
+    [model setValuesForKeysWithDictionary:dict];
+    [self.roadArray addObject:model];
     
-    NSString *road1 = @"1";
-    [self.roadArray addObject:road1];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData:) name:@"SXUpdateRoadsNotification" object:nil];
+
     // Do any additional setup after loading the view.
 }
 
+
+#pragma mark - Private Methods
+
+- (void)addNewRoadClick{
+    SetRoadViewController *vc = [[SetRoadViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)commitOrderClick{
+    CommitOrderViewController *vc = [[CommitOrderViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)reloadData:(NSNotification *)notification{
+    
+    NSLog(@"object = %@",notification.object);
+    RoadModel *model = notification.object;
+    [self.roadArray addObject:model];
+    [self.collectionView reloadData];
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -43,68 +74,61 @@
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.roadArray.count + 1;
+    return self.roadArray.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *reusableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
+        RoadModel *model = self.roadArray[indexPath.section];
         SXIndexHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
         headerView.bgColor = [UIColor lightGrayColor];
-        if (indexPath.section == 0) {
-            headerView.titleLabel.text = @"人数";
+        headerView.titleLabel.text = [NSString stringWithFormat:@"路线%ld",(indexPath.section + 1)];
+        if (model) {
+            headerView.rightLabel.text = [NSString stringWithFormat:@"%@----%@",model.startPoint,model.endPoint];
         }else{
-            headerView.titleLabel.text = [NSString stringWithFormat:@"路线%ld",(indexPath.section)];
+            headerView.rightLabel.text = @"";
+
         }
         reusableView = headerView;
     }else if (kind == UICollectionElementKindSectionFooter){
         RoadFooterView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RoadFooterView" forIndexPath:indexPath];
         [footerView.addRoadButton addTarget:self action:@selector(addNewRoadClick) forControlEvents:UIControlEventTouchUpInside];
+        [footerView.commitButton addTarget:self action:@selector(commitOrderClick) forControlEvents:UIControlEventTouchUpInside];
         reusableView = footerView;
     }
     return reusableView;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        static NSString *cellIde = @"PersonCell";
-        PersonCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
-        return cell;
-    }else {
-        static NSString *cellIde = @"RoadCell";
-        RoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
-        return cell;
-    }
+    
+    RoadModel *model = self.roadArray[indexPath.section];
+    static NSString *cellIde = @"RoadCell";
+    RoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
+    cell.model = model;
+    return cell;
     
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return CGSizeMake(SX_SCREEN_WIDTH, 50);
-    }else{
-        return CGSizeMake(SX_SCREEN_WIDTH, 100);
-    }
-
+    return CGSizeMake(SX_SCREEN_WIDTH, 200);
+    
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-        return UIEdgeInsetsZero;
+    return UIEdgeInsetsZero;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return CGSizeMake(SX_SCREEN_WIDTH, 30);
-    }else{
-        return CGSizeMake(SX_SCREEN_WIDTH, 30);
-    }
-   
+    return CGSizeMake(SX_SCREEN_WIDTH, 30);
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    if (section == self.roadArray.count) {
-        return CGSizeMake(SX_SCREEN_WIDTH, 50);
+    if (section == self.roadArray.count - 1) {
+        return CGSizeMake(SX_SCREEN_WIDTH, 100);
     }
     return CGSizeZero;
 }
@@ -113,18 +137,8 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    
 }
-
-
-#pragma mark - Private Methods
-
-- (void)addNewRoadClick{
-    RoadModel *model = [[RoadModel alloc]init];
-    [self.roadArray addObject:model];
-    [self.collectionView reloadData];
-}
-
 
 #pragma mark - Property
 
@@ -143,12 +157,11 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator = NO;
-        [_collectionView registerClass:[PersonCell class] forCellWithReuseIdentifier:@"PersonCell"];
         [_collectionView registerClass:[RoadCell class] forCellWithReuseIdentifier:@"RoadCell"];
         [_collectionView registerClass:[SXIndexHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
         [_collectionView registerClass:[RoadFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"RoadFooterView"];
-
-//        [_collectionView registerClass:[TopicRoadCell class] forCellWithReuseIdentifier:@"TopicRoadCell"];
+        
+        //        [_collectionView registerClass:[TopicRoadCell class] forCellWithReuseIdentifier:@"TopicRoadCell"];
         
     }
     return _collectionView;
@@ -167,13 +180,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

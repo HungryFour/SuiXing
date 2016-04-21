@@ -10,14 +10,15 @@
 
 @interface RoadCell ()
 
-@property (strong, nonatomic) UIView *cityView;
-@property (strong, nonatomic) UILabel *originCityLabel;
-@property (strong, nonatomic) UILabel *toCityLabel;
-@property (strong, nonatomic) UILabel *lineLabel;
+@property (strong, nonatomic) UIView *roadView;
 
-@property (strong, nonatomic) UIView *timeView;
-@property (strong, nonatomic) UIView *hotelView;
-@property (strong, nonatomic) UIView *tripView;
+@property (strong, nonatomic) UILabel *numberLabel;
+@property (strong, nonatomic) UILabel *startTimeLabel;
+@property (strong, nonatomic) UILabel *tripTypeLabel;
+@property (strong, nonatomic) UILabel *hotelLabel;
+@property (strong, nonatomic) UILabel *startLiveLabel;
+@property (strong, nonatomic) UILabel *endLiveLabel;
+@property (strong, nonatomic) UILabel *totalTimeLabel;
 
 @end
 
@@ -26,100 +27,115 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        [self addSubview:self.cityView];
-        [self addSubview:self.timeView];
-        [self addSubview:self.hotelView];
-        [self addSubview:self.tripView];
+        [self addSubview:self.roadView];
+        [self.roadView addSubview:self.numberLabel];
+        [self.roadView addSubview:self.startTimeLabel];
+        [self.roadView addSubview:self.tripTypeLabel];
+        [self.roadView addSubview:self.hotelLabel];
+        [self.roadView addSubview:self.startLiveLabel];
+        [self.roadView addSubview:self.endLiveLabel];
+        [self.roadView addSubview:self.totalTimeLabel];
         
-        [self updateRoadView];
     }
     return self;
 }
 
-- (void)updateRoadView{
-    [self.originCityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.cityView.mas_centerY);
-        make.left.equalTo(self.cityView.mas_left).offset(20);
-    }];
-    
-    [self.toCityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.cityView.mas_centerY);
-        make.right.equalTo(self.cityView.mas_right).offset(-20);
-    }];
-    
-    [self.lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.cityView.mas_centerY).priorityLow();
-        make.left.equalTo(self.originCityLabel.mas_right).offset(30).priorityLow();
-        make.right.equalTo(self.toCityLabel.mas_left).offset(30).priorityLow();
-        make.height.equalTo(@1).priorityLow();
-    }];
-}
-
 #pragma mark - Property
 
-- (UIView *)cityView{
-    if (!_cityView) {
-        _cityView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height / 4)];
-        [_cityView addSubview:self.originCityLabel];
-        [_cityView addSubview:self.toCityLabel];
-        [_cityView addSubview:self.lineLabel];
-        _cityView.backgroundColor = [UIColor redColor];
-    }
-    return _cityView;
+- (void)setModel:(RoadModel *)model{
+    self.numberLabel.text = [NSString stringWithFormat:@"人数：%@",model.number];
+    self.startTimeLabel.text = [NSString stringWithFormat:@"出行时间：%@",model.startTime];
+    self.tripTypeLabel.text = [NSString stringWithFormat:@"行乘方式：%@",model.tripType];
+    self.hotelLabel.text = [NSString stringWithFormat:@"酒店：%@",model.hotel];
+    self.startLiveLabel.text = [NSString stringWithFormat:@"入住时间：%@",model.startLiveTime];
+    self.endLiveLabel.text = [NSString stringWithFormat:@"离店时间：%@",model.endLiveTime];
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"共计：1天"];
+
 }
 
-- (UILabel *)originCityLabel{
-    if (!_originCityLabel) {
-        _originCityLabel = [[UILabel alloc]init];
-        _originCityLabel.textColor = UIColorFromRGB(0x333333);
-        _originCityLabel.font = [UIFont systemFontOfSize:18];
-        _originCityLabel.text = @"北京";
+-(UIView *)roadView{
+    if (!_roadView) {
+        _roadView = [[UIView alloc]initWithFrame:CGRectMake(20, 10, SX_SCREEN_WIDTH - 40, self.bounds.size.height - 20)];
+        _roadView.backgroundColor  = [UIColor whiteColor];
+        _roadView.layer.borderWidth = 1;
+        _roadView.layer.borderColor = UIColorFromRGB(0x999999).CGColor;
+        _roadView.layer.cornerRadius = 5;
+        _roadView.layer.masksToBounds = YES;
+
     }
-    return _originCityLabel;
+    return _roadView;
 }
 
-- (UILabel *)toCityLabel{
-    if (!_toCityLabel) {
-        _toCityLabel = [[UILabel alloc]init];
-        _toCityLabel.textColor = UIColorFromRGB(0x333333);
-        _toCityLabel.font = [UIFont systemFontOfSize:18];
-        _toCityLabel.text = @"上海";
+- (UILabel *)numberLabel{
+    if (!_numberLabel) {
+        _numberLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 100, self.roadView.size.height / 6)];
+        NSLog(@"height = %f",self.roadView.size.height / 6);
+        _numberLabel.textColor = UIColorFromRGB(0x333333);
+        _numberLabel.font = [UIFont systemFontOfSize:13];
+        _numberLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _toCityLabel;
+    return _numberLabel;
 }
 
-- (UILabel *)lineLabel{
-    if (!_lineLabel) {
-        _lineLabel = [[UILabel alloc]init];
-        _lineLabel.backgroundColor = UIColorFromRGB(0x333333);
+- (UILabel *)startTimeLabel{
+    if (!_startTimeLabel) {
+        _startTimeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.numberLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _startTimeLabel.textColor = UIColorFromRGB(0x333333);
+        _startTimeLabel.font = [UIFont systemFontOfSize:13];
+        _startTimeLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _lineLabel;
+    return _startTimeLabel;
 }
 
-
-
-- (UIView *)timeView{
-    if (!_timeView) {
-        _timeView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.cityView.frame), self.bounds.size.width, self.bounds.size.height / 4)];
-        _timeView.backgroundColor = [UIColor greenColor];
+- (UILabel *)tripTypeLabel{
+    if (!_tripTypeLabel) {
+        _tripTypeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.startTimeLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _tripTypeLabel.textColor = UIColorFromRGB(0x333333);
+        _tripTypeLabel.font = [UIFont systemFontOfSize:13];
+        _tripTypeLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _timeView;
+    return _tripTypeLabel;
 }
 
-- (UIView *)hotelView{
-    if (!_hotelView) {
-        _hotelView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.timeView.frame), self.bounds.size.width, self.bounds.size.height / 4)];
-        _hotelView.backgroundColor = [UIColor yellowColor];
+- (UILabel *)hotelLabel{
+    if (!_hotelLabel) {
+        _hotelLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.tripTypeLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _hotelLabel.textColor = UIColorFromRGB(0x333333);
+        _hotelLabel.font = [UIFont systemFontOfSize:13];
+        _hotelLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _hotelView;
+    return _hotelLabel;
 }
 
-- (UIView *)tripView{
-    if (!_tripView) {
-        _tripView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.hotelView.frame), self.bounds.size.width, self.bounds.size.height / 4)];
-        _tripView.backgroundColor = [UIColor blueColor];
+- (UILabel *)startLiveLabel{
+    if (!_startLiveLabel) {
+        _startLiveLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.hotelLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _startLiveLabel.textColor = UIColorFromRGB(0x333333);
+        _startLiveLabel.font = [UIFont systemFontOfSize:13];
+        _startLiveLabel.textAlignment = NSTextAlignmentLeft;
     }
-    return _tripView;
+    return _startLiveLabel;
 }
+
+- (UILabel *)endLiveLabel{
+    if (!_endLiveLabel) {
+        _endLiveLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.startLiveLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _endLiveLabel.textColor = UIColorFromRGB(0x333333);
+        _endLiveLabel.font = [UIFont systemFontOfSize:13];
+        _endLiveLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _endLiveLabel;
+}
+
+- (UILabel *)totalTimeLabel{
+    if (!_totalTimeLabel) {
+        _totalTimeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(self.endLiveLabel.frame), CGRectGetWidth(self.roadView.frame), self.roadView.size.height / 7)];
+        _totalTimeLabel.textColor = UIColorFromRGB(0x333333);
+        _totalTimeLabel.font = [UIFont systemFontOfSize:13];
+        _totalTimeLabel.textAlignment = NSTextAlignmentLeft;
+    }
+    return _totalTimeLabel;
+}
+
 
 @end

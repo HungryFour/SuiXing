@@ -46,10 +46,16 @@
 		D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333251CBE5A8B001E326D /* TopicRoadCell.m */; };
 		D35333291CBF4137001E326D /* SXIndexHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D35333281CBF4137001E326D /* SXIndexHeaderView.m */; };
 		D353332C1CBF46C4001E326D /* NewRoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D353332B1CBF46C4001E326D /* NewRoadModel.m */; };
+		D3F14E111CC8A99E001D39C8 /* SetRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E101CC8A99E001D39C8 /* SetRoadViewController.m */; };
+		D3F14E141CC8AE90001D39C8 /* SetRoadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E131CC8AE90001D39C8 /* SetRoadCell.m */; };
+		D3F14E171CC8BB4F001D39C8 /* CommitOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E161CC8BB4F001D39C8 /* CommitOrderViewController.m */; };
+		D3F14E201CC8BD88001D39C8 /* SelectHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E1F1CC8BD88001D39C8 /* SelectHotelViewController.m */; };
+		D3F14E401CC8DE07001D39C8 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */; };
+		D3F14E421CC8DEED001D39C8 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F14E411CC8DEED001D39C8 /* city.plist */; };
 		D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */; };
 		D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12E1CC6127100C36C0E /* UIView+extension.m */; };
 		D3F6C1321CC7271E00C36C0E /* SXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C1311CC7271E00C36C0E /* SXInteractiveTransition.m */; };
-		D3FE79CE1CC0C413004A3663 /* SelectRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */; };
+		D3FE79CE1CC0C413004A3663 /* RoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79CD1CC0C413004A3663 /* RoadViewController.m */; };
 		D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D01CC0C6E2004A3663 /* UIView+Addition.m */; };
 		D3FE79D41CC0DC96004A3663 /* BrowsePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D31CC0DC96004A3663 /* BrowsePictureViewController.m */; };
 		D3FE79D71CC0DCBA004A3663 /* SXPresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FE79D61CC0DCBA004A3663 /* SXPresentTransition.m */; };
@@ -159,14 +165,25 @@
 		D35333281CBF4137001E326D /* SXIndexHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXIndexHeaderView.m; sourceTree = "<group>"; };
 		D353332A1CBF46C4001E326D /* NewRoadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRoadModel.h; sourceTree = "<group>"; };
 		D353332B1CBF46C4001E326D /* NewRoadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRoadModel.m; sourceTree = "<group>"; };
+		D3F14E0F1CC8A99E001D39C8 /* SetRoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRoadViewController.h; sourceTree = "<group>"; };
+		D3F14E101CC8A99E001D39C8 /* SetRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRoadViewController.m; sourceTree = "<group>"; };
+		D3F14E121CC8AE90001D39C8 /* SetRoadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRoadCell.h; sourceTree = "<group>"; };
+		D3F14E131CC8AE90001D39C8 /* SetRoadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetRoadCell.m; sourceTree = "<group>"; };
+		D3F14E151CC8BB4F001D39C8 /* CommitOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitOrderViewController.h; sourceTree = "<group>"; };
+		D3F14E161CC8BB4F001D39C8 /* CommitOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitOrderViewController.m; sourceTree = "<group>"; };
+		D3F14E1E1CC8BD88001D39C8 /* SelectHotelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectHotelViewController.h; sourceTree = "<group>"; };
+		D3F14E1F1CC8BD88001D39C8 /* SelectHotelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectHotelViewController.m; sourceTree = "<group>"; };
+		D3F14E3E1CC8DE07001D39C8 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
+		D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		D3F14E411CC8DEED001D39C8 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		D3F6C12A1CC6112900C36C0E /* InfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeaderCell.h; sourceTree = "<group>"; };
 		D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeaderCell.m; sourceTree = "<group>"; };
 		D3F6C12D1CC6127100C36C0E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
 		D3F6C12E1CC6127100C36C0E /* UIView+extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extension.m"; sourceTree = "<group>"; };
 		D3F6C1301CC7271E00C36C0E /* SXInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXInteractiveTransition.h; sourceTree = "<group>"; };
 		D3F6C1311CC7271E00C36C0E /* SXInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXInteractiveTransition.m; sourceTree = "<group>"; };
-		D3FE79CC1CC0C413004A3663 /* SelectRoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoadViewController.h; sourceTree = "<group>"; };
-		D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoadViewController.m; sourceTree = "<group>"; };
+		D3FE79CC1CC0C413004A3663 /* RoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoadViewController.h; sourceTree = "<group>"; };
+		D3FE79CD1CC0C413004A3663 /* RoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoadViewController.m; sourceTree = "<group>"; };
 		D3FE79CF1CC0C6E2004A3663 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
 		D3FE79D01CC0C6E2004A3663 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		D3FE79D21CC0DC96004A3663 /* BrowsePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowsePictureViewController.h; sourceTree = "<group>"; };
@@ -406,16 +423,16 @@
 		D33147941CC7631000906A60 /* 选择路线 */ = {
 			isa = PBXGroup;
 			children = (
-				D3FE79CC1CC0C413004A3663 /* SelectRoadViewController.h */,
-				D3FE79CD1CC0C413004A3663 /* SelectRoadViewController.m */,
-				D30B4E061CC779D5008D97C1 /* RoadFooterView.h */,
-				D30B4E071CC779D5008D97C1 /* RoadFooterView.m */,
-				D33147951CC7669600906A60 /* PersonCell.h */,
-				D33147961CC7669600906A60 /* PersonCell.m */,
-				D33147981CC766DA00906A60 /* RoadCell.h */,
-				D33147991CC766DA00906A60 /* RoadCell.m */,
-				D30B4E091CC77D62008D97C1 /* RoadModel.h */,
-				D30B4E0A1CC77D62008D97C1 /* RoadModel.m */,
+				D3F14E0E1CC8A96A001D39C8 /* Model */,
+				D3F14E0D1CC8A961001D39C8 /* View */,
+				D3FE79CC1CC0C413004A3663 /* RoadViewController.h */,
+				D3FE79CD1CC0C413004A3663 /* RoadViewController.m */,
+				D3F14E151CC8BB4F001D39C8 /* CommitOrderViewController.h */,
+				D3F14E161CC8BB4F001D39C8 /* CommitOrderViewController.m */,
+				D3F14E0F1CC8A99E001D39C8 /* SetRoadViewController.h */,
+				D3F14E101CC8A99E001D39C8 /* SetRoadViewController.m */,
+				D3F14E1E1CC8BD88001D39C8 /* SelectHotelViewController.h */,
+				D3F14E1F1CC8BD88001D39C8 /* SelectHotelViewController.m */,
 			);
 			name = "选择路线";
 			sourceTree = "<group>";
@@ -481,6 +498,49 @@
 				D35333111CBE2B35001E326D /* 9.jpg */,
 			);
 			path = ScrollViewImage;
+			sourceTree = "<group>";
+		};
+		D3F14E0D1CC8A961001D39C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3F14E311CC8D748001D39C8 /* PickerView */,
+				D30B4E061CC779D5008D97C1 /* RoadFooterView.h */,
+				D30B4E071CC779D5008D97C1 /* RoadFooterView.m */,
+				D33147951CC7669600906A60 /* PersonCell.h */,
+				D33147961CC7669600906A60 /* PersonCell.m */,
+				D33147981CC766DA00906A60 /* RoadCell.h */,
+				D33147991CC766DA00906A60 /* RoadCell.m */,
+				D3F14E121CC8AE90001D39C8 /* SetRoadCell.h */,
+				D3F14E131CC8AE90001D39C8 /* SetRoadCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D3F14E0E1CC8A96A001D39C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D30B4E091CC77D62008D97C1 /* RoadModel.h */,
+				D30B4E0A1CC77D62008D97C1 /* RoadModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D3F14E311CC8D748001D39C8 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D3F14E3D1CC8DB47001D39C8 /* PickerView */,
+			);
+			name = PickerView;
+			sourceTree = "<group>";
+		};
+		D3F14E3D1CC8DB47001D39C8 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D3F14E411CC8DEED001D39C8 /* city.plist */,
+				D3F14E3E1CC8DE07001D39C8 /* ZHPickView.h */,
+				D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */,
+			);
+			name = PickerView;
 			sourceTree = "<group>";
 		};
 		D3F6C1271CC60F6800C36C0E /* Controller */ = {
@@ -725,6 +785,7 @@
 				D3FF9DC71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png in Resources */,
 				D35333181CBE2B35001E326D /* 7.jpg in Resources */,
 				D353331A1CBE2B35001E326D /* 9.jpg in Resources */,
+				D3F14E421CC8DEED001D39C8 /* city.plist in Resources */,
 				D3FF9DC81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png in Resources */,
 				D3FF9DCC1CB4E281005C6A45 /* tab_home_unselected@2x.png in Resources */,
 			);
@@ -802,7 +863,10 @@
 				D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */,
 				D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */,
 				2FE858371C965A00007E9B04 /* TabBarViewController.m in Sources */,
+				D3F14E141CC8AE90001D39C8 /* SetRoadCell.m in Sources */,
+				D3F14E111CC8A99E001D39C8 /* SetRoadViewController.m in Sources */,
 				D35333231CBE5A7A001E326D /* NewRoadCell.m in Sources */,
+				D3F14E171CC8BB4F001D39C8 /* CommitOrderViewController.m in Sources */,
 				D3F6C1321CC7271E00C36C0E /* SXInteractiveTransition.m in Sources */,
 				D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */,
 				D353332C1CBF46C4001E326D /* NewRoadModel.m in Sources */,
@@ -820,7 +884,7 @@
 				D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */,
 				D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */,
 				D35332F31CBDEF93001E326D /* SXScrollCell.m in Sources */,
-				D3FE79CE1CC0C413004A3663 /* SelectRoadViewController.m in Sources */,
+				D3FE79CE1CC0C413004A3663 /* RoadViewController.m in Sources */,
 				D35333291CBF4137001E326D /* SXIndexHeaderView.m in Sources */,
 				D331479A1CC766DA00906A60 /* RoadCell.m in Sources */,
 				D30B4E081CC779D5008D97C1 /* RoadFooterView.m in Sources */,
@@ -830,6 +894,8 @@
 				2FE858401C965D18007E9B04 /* DynamicViewController.m in Sources */,
 				D35332FD1CBDF0AA001E326D /* AdScrollView.m in Sources */,
 				2FE858461C965DB1007E9B04 /* MineViewController.m in Sources */,
+				D3F14E201CC8BD88001D39C8 /* SelectHotelViewController.m in Sources */,
+				D3F14E401CC8DE07001D39C8 /* ZHPickView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import "SXScrollCell.h"
 #import "SXScrollView.h"
 #import "SXScrollModel.h"
-#import "SelectRoadViewController.h"
+#import "RoadViewController.h"
 
 @interface SXScrollCell () <SXScrollViewDelegate,SXSrollViewDataSource>
 
@@ -87,7 +87,7 @@
 }
 
 - (void)setOutClick:(UIButton *)button{
-    SelectRoadViewController *vc = [[SelectRoadViewController alloc]init];
+    RoadViewController *vc = [[RoadViewController alloc]init];
     [self.viewController.navigationController pushViewController:vc animated:YES];
 }
 

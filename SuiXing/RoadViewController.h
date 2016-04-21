@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectRoadViewController : UIViewController
+@interface RoadViewController : UIViewController
 
 @end
