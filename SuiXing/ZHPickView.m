@@ -137,7 +137,7 @@
 -(void)setUpPickView{
     
     UIPickerView *pickView=[[UIPickerView alloc] init];
-    pickView.backgroundColor=[UIColor lightGrayColor];
+    pickView.backgroundColor=[UIColor whiteColor];
     _pickerView=pickView;
     pickView.delegate=self;
     pickView.dataSource=self;
@@ -321,8 +321,10 @@
            }
         }
     }else if (_datePicker) {
-      
-        _resultString=[NSString stringWithFormat:@"%@",_datePicker.date];
+        NSDateFormatter * format = [[NSDateFormatter alloc]init];
+        [format setDateFormat:@"yyyy-MM-dd"];
+        NSString * dateString = [format stringFromDate:_datePicker.date];
+        _resultString=[NSString stringWithFormat:@"%@",dateString];
     }
     if ([self.delegate respondsToSelector:@selector(toobarDonBtnHaveClick:resultString:)]) {
         [self.delegate toobarDonBtnHaveClick:self resultString:_resultString];

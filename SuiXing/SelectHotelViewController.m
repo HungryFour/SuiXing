@@ -10,4 +10,13 @@
 
 @implementation SelectHotelViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.title = @"选择酒店";
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    // Do any additional setup after loading the view.
+    
+}
+
 @end

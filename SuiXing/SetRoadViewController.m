@@ -10,6 +10,7 @@
 #import "SetRoadCell.h"
 #import "RoadModel.h"
 #import "ZHPickView.h"
+#import "SelectHotelViewController.h"
 
 #define Cell_Name @[@"选择起点",@"选择下一站",@"选择出行方式",@"出发时间",@"选择入住时间",@"选择离店时间",@"选择酒店"]
 #define Key @[@"number",@"startPoint",@"endPoint",@"tripType",@"startTime",@"startLiveTime",@"endLiveTime",@"hotel"]
@@ -54,6 +55,7 @@
     SetRoadCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIde];
     if (!cell) {
         cell = [[SetRoadCell alloc]init];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.leftLabel.text = Cell_Name[indexPath.row];
     
@@ -97,45 +99,60 @@
         case 0:
         {
              _pickview=[[ZHPickView alloc] initPickviewWithPlistName:@"city" isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
         }
             break;
         case 1:
         {
             _pickview=[[ZHPickView alloc] initPickviewWithPlistName:@"city" isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
         }
             
             break;
         case 2:
-            
+        {
+            NSArray *array=@[@"飞机",@"火车",@"汽车",@"游轮",@"其他"];
+            _pickview=[[ZHPickView alloc] initPickviewWithArray:array isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
+        }
             break;
         case 3:
         {
             NSDate *date=[NSDate dateWithTimeIntervalSinceNow:9000000];
             _pickview=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
         }
             break;
         case 4:
         {
             NSDate *date=[NSDate dateWithTimeIntervalSinceNow:9000000];
             _pickview=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
         }
             break;
         case 5:
         {
             NSDate *date=[NSDate dateWithTimeIntervalSinceNow:9000000];
             _pickview=[[ZHPickView alloc] initDatePickWithDate:date datePickerMode:UIDatePickerModeDate isHaveNavControler:NO];
+            _pickview.delegate=self;
+            [_pickview show];
         }
             break;
         case 6:
-            
+        {
+            SelectHotelViewController *vc = [[SelectHotelViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
             
         default:
             break;
     }
-    
-    _pickview.delegate=self;
-    [_pickview show];
     
 }
 
