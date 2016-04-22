@@ -17,6 +17,10 @@
 #import "SXPresentTransition.h"
 #import "UIView+extension.h"
 
+
+#define SXRoadNotification @"SXUpdateRoadsNotification"
+#define SXHotelNotification @"SXHotelNotification"
+
 //版本号
 #define MF_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]
 #define MF_BUNDLE_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]

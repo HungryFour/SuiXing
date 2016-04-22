@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HotelCell" id="UzE-WS-PFT" customClass="HotelCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UzE-WS-PFT" id="4qA-Ec-hhG">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel1.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="SJB-U5-UXb">
+                        <rect key="frame" x="8" y="5" width="90" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="UJ1-ei-e4z"/>
+                            <constraint firstAttribute="height" constant="90" id="Yj6-uh-Thd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京阳光酒店" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rak-2T-tCY">
+                        <rect key="frame" x="108" y="5" width="202" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥355起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-kg-fUJ">
+                        <rect key="frame" x="237" y="39" width="65" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="0.77604154947690263" blue="0.55834281698955968" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离您0.9公里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9G9-Ag-W0z">
+                        <rect key="frame" x="108" y="31" width="78" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="舒适型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-8M-Bgu">
+                        <rect key="frame" x="108" y="54" width="36" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10分钟前有人预定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMX-fG-VFf">
+                        <rect key="frame" x="108" y="77" width="98" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rak-2T-tCY" firstAttribute="leading" secondItem="SJB-U5-UXb" secondAttribute="trailing" constant="10" id="7xe-uo-sr1"/>
+                    <constraint firstItem="SvG-8M-Bgu" firstAttribute="top" secondItem="9G9-Ag-W0z" secondAttribute="bottom" constant="8" id="Bmu-pf-rmK"/>
+                    <constraint firstItem="SJB-U5-UXb" firstAttribute="leading" secondItem="4qA-Ec-hhG" secondAttribute="leading" constant="8" id="G7R-lg-BVC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Jf1-kg-fUJ" secondAttribute="trailing" constant="10" id="H2J-Qp-Fhg"/>
+                    <constraint firstItem="rak-2T-tCY" firstAttribute="top" secondItem="4qA-Ec-hhG" secondAttribute="top" constant="5" id="HNT-gg-6b9"/>
+                    <constraint firstItem="9G9-Ag-W0z" firstAttribute="leading" secondItem="SJB-U5-UXb" secondAttribute="trailing" constant="10" id="IdJ-fx-WOR"/>
+                    <constraint firstItem="SJB-U5-UXb" firstAttribute="top" secondItem="4qA-Ec-hhG" secondAttribute="top" constant="5" id="MLI-C7-JZI"/>
+                    <constraint firstAttribute="trailing" secondItem="rak-2T-tCY" secondAttribute="trailing" constant="10" id="SiK-cr-k53"/>
+                    <constraint firstAttribute="bottom" secondItem="SJB-U5-UXb" secondAttribute="bottom" constant="5" id="UM4-iM-IXm"/>
+                    <constraint firstItem="9G9-Ag-W0z" firstAttribute="top" secondItem="rak-2T-tCY" secondAttribute="bottom" constant="8" id="V7c-fs-5Df"/>
+                    <constraint firstItem="Jf1-kg-fUJ" firstAttribute="centerY" secondItem="4qA-Ec-hhG" secondAttribute="centerY" id="auJ-CW-zDH"/>
+                    <constraint firstItem="sMX-fG-VFf" firstAttribute="leading" secondItem="SJB-U5-UXb" secondAttribute="trailing" constant="10" id="eMn-t1-2kC"/>
+                    <constraint firstItem="SvG-8M-Bgu" firstAttribute="leading" secondItem="SJB-U5-UXb" secondAttribute="trailing" constant="10" id="iJg-kP-nck"/>
+                    <constraint firstItem="sMX-fG-VFf" firstAttribute="top" secondItem="SvG-8M-Bgu" secondAttribute="bottom" constant="8" id="wbm-h2-9Ii"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="hotelImageView" destination="SJB-U5-UXb" id="uQ7-fR-V74"/>
+                <outlet property="hotelLocation" destination="9G9-Ag-W0z" id="Yj8-13-Oxu"/>
+                <outlet property="hotelMessage" destination="sMX-fG-VFf" id="Swx-IW-62m"/>
+                <outlet property="hotelName" destination="rak-2T-tCY" id="gBC-Vr-gQM"/>
+                <outlet property="hotelPrice" destination="Jf1-kg-fUJ" id="d2E-v8-KC7"/>
+                <outlet property="hotelType" destination="SvG-8M-Bgu" id="bAe-az-0Qt"/>
+            </connections>
+            <point key="canvasLocation" x="706" y="467"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hotel1.JPG" width="550" height="412"/>
+    </resources>
+</document>

@@ -49,8 +49,35 @@
     self.hotelLabel.text = [NSString stringWithFormat:@"酒店：%@",model.hotel];
     self.startLiveLabel.text = [NSString stringWithFormat:@"入住时间：%@",model.startLiveTime];
     self.endLiveLabel.text = [NSString stringWithFormat:@"离店时间：%@",model.endLiveTime];
-    self.totalTimeLabel.text = [NSString stringWithFormat:@"共计：1天"];
+    
+    self.totalTimeLabel.text = [NSString stringWithFormat:@"共计：%ld天",[self compareDate:model.startLiveTime compareDate:model.endLiveTime]];
+}
 
+-(NSInteger) compareDate:(NSString *)date compareDate:(NSString *) compareDate
+{
+
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSUInteger unitFlags = NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSDateFormatter *format=[[NSDateFormatter alloc] init];
+    [format setDateFormat:@"yyyy-MM-dd"];
+    NSDate *fromdate=[format dateFromString:date];
+    NSTimeZone *fromzone = [NSTimeZone systemTimeZone];
+    NSInteger frominterval = [fromzone secondsFromGMTForDate: fromdate];
+    NSDate *fromDate = [fromdate  dateByAddingTimeInterval: frominterval];
+    NSLog(@"fromdate=%@",fromDate);
+
+    NSDate *toDate = [format dateFromString:compareDate];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSInteger interval = [zone secondsFromGMTForDate: toDate];
+    NSDate *localeDate = [toDate  dateByAddingTimeInterval: interval];
+    NSLog(@"enddate=%@",localeDate);
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:fromDate toDate:localeDate options:0];
+    NSInteger months = [components month];
+    NSInteger days = [components day];//年[components year]
+    NSLog(@"month=%ld",months);
+    NSLog(@"days=%ld",days);
+
+    return days;
 }
 
 -(UIView *)roadView{

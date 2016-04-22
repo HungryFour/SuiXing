@@ -150,7 +150,7 @@
     UIDatePicker *datePicker=[[UIDatePicker alloc] init];
     datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     datePicker.datePickerMode = datePickerMode;
-    datePicker.backgroundColor=[UIColor lightGrayColor];
+    datePicker.backgroundColor=[UIColor whiteColor];
     if (_defaulDate) {
         [datePicker setDate:_defaulDate];
     }
@@ -286,9 +286,9 @@
     [self removeFromSuperview];
 }
 -(void)show{
-    
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
-    
+    [UIView animateWithDuration:0.5 animations:^{
+        [[UIApplication sharedApplication].keyWindow addSubview:self];
+    }];
 }
 -(void)doneClick
 {

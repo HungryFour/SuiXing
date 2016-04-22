@@ -10,5 +10,6 @@
 
 @interface SetRoadViewController : UIViewController
 
+@property (strong, nonatomic) NSString *startPoint;
 
 @end

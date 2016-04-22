@@ -52,6 +52,21 @@
 		D3F14E201CC8BD88001D39C8 /* SelectHotelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E1F1CC8BD88001D39C8 /* SelectHotelViewController.m */; };
 		D3F14E401CC8DE07001D39C8 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */; };
 		D3F14E421CC8DEED001D39C8 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F14E411CC8DEED001D39C8 /* city.plist */; };
+		D3F602171CC9C19F00580CBC /* HotelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F602161CC9C19F00580CBC /* HotelCell.m */; };
+		D3F602191CC9C38000580CBC /* HotelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3F602181CC9C38000580CBC /* HotelCell.xib */; };
+		D3F602271CC9C52500580CBC /* hotel1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F6021B1CC9C52500580CBC /* hotel1.JPG */; };
+		D3F602281CC9C52500580CBC /* hotel2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F6021C1CC9C52500580CBC /* hotel2.JPG */; };
+		D3F602291CC9C52500580CBC /* hotel3.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F6021D1CC9C52500580CBC /* hotel3.JPG */; };
+		D3F6022A1CC9C52500580CBC /* hotel4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F6021E1CC9C52500580CBC /* hotel4.JPG */; };
+		D3F6022B1CC9C52500580CBC /* hotel5.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F6021F1CC9C52500580CBC /* hotel5.JPG */; };
+		D3F6022C1CC9C52500580CBC /* hotel6.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602201CC9C52500580CBC /* hotel6.JPG */; };
+		D3F6022D1CC9C52500580CBC /* hotel7.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602211CC9C52500580CBC /* hotel7.JPG */; };
+		D3F6022E1CC9C52500580CBC /* hotel8.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602221CC9C52500580CBC /* hotel8.JPG */; };
+		D3F6022F1CC9C52500580CBC /* hotel9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602231CC9C52500580CBC /* hotel9.JPG */; };
+		D3F602301CC9C52500580CBC /* hotel10.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602241CC9C52500580CBC /* hotel10.JPG */; };
+		D3F602311CC9C52500580CBC /* hotel11.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602251CC9C52500580CBC /* hotel11.JPG */; };
+		D3F602321CC9C52500580CBC /* hotel12.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602261CC9C52500580CBC /* hotel12.JPG */; };
+		D3F602351CC9C80700580CBC /* hotelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F602341CC9C80700580CBC /* hotelModel.m */; };
 		D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */; };
 		D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12E1CC6127100C36C0E /* UIView+extension.m */; };
 		D3F6C1321CC7271E00C36C0E /* SXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C1311CC7271E00C36C0E /* SXInteractiveTransition.m */; };
@@ -176,6 +191,23 @@
 		D3F14E3E1CC8DE07001D39C8 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		D3F14E411CC8DEED001D39C8 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		D3F602151CC9C19F00580CBC /* HotelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelCell.h; sourceTree = "<group>"; };
+		D3F602161CC9C19F00580CBC /* HotelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelCell.m; sourceTree = "<group>"; };
+		D3F602181CC9C38000580CBC /* HotelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelCell.xib; sourceTree = "<group>"; };
+		D3F6021B1CC9C52500580CBC /* hotel1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel1.JPG; sourceTree = "<group>"; };
+		D3F6021C1CC9C52500580CBC /* hotel2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel2.JPG; sourceTree = "<group>"; };
+		D3F6021D1CC9C52500580CBC /* hotel3.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel3.JPG; sourceTree = "<group>"; };
+		D3F6021E1CC9C52500580CBC /* hotel4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel4.JPG; sourceTree = "<group>"; };
+		D3F6021F1CC9C52500580CBC /* hotel5.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel5.JPG; sourceTree = "<group>"; };
+		D3F602201CC9C52500580CBC /* hotel6.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel6.JPG; sourceTree = "<group>"; };
+		D3F602211CC9C52500580CBC /* hotel7.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel7.JPG; sourceTree = "<group>"; };
+		D3F602221CC9C52500580CBC /* hotel8.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel8.JPG; sourceTree = "<group>"; };
+		D3F602231CC9C52500580CBC /* hotel9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel9.JPG; sourceTree = "<group>"; };
+		D3F602241CC9C52500580CBC /* hotel10.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel10.JPG; sourceTree = "<group>"; };
+		D3F602251CC9C52500580CBC /* hotel11.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel11.JPG; sourceTree = "<group>"; };
+		D3F602261CC9C52500580CBC /* hotel12.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel12.JPG; sourceTree = "<group>"; };
+		D3F602331CC9C80700580CBC /* hotelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotelModel.h; sourceTree = "<group>"; };
+		D3F602341CC9C80700580CBC /* hotelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotelModel.m; sourceTree = "<group>"; };
 		D3F6C12A1CC6112900C36C0E /* InfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeaderCell.h; sourceTree = "<group>"; };
 		D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeaderCell.m; sourceTree = "<group>"; };
 		D3F6C12D1CC6127100C36C0E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
@@ -512,6 +544,9 @@
 				D33147991CC766DA00906A60 /* RoadCell.m */,
 				D3F14E121CC8AE90001D39C8 /* SetRoadCell.h */,
 				D3F14E131CC8AE90001D39C8 /* SetRoadCell.m */,
+				D3F602151CC9C19F00580CBC /* HotelCell.h */,
+				D3F602161CC9C19F00580CBC /* HotelCell.m */,
+				D3F602181CC9C38000580CBC /* HotelCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -521,6 +556,8 @@
 			children = (
 				D30B4E091CC77D62008D97C1 /* RoadModel.h */,
 				D30B4E0A1CC77D62008D97C1 /* RoadModel.m */,
+				D3F602331CC9C80700580CBC /* hotelModel.h */,
+				D3F602341CC9C80700580CBC /* hotelModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -541,6 +578,25 @@
 				D3F14E3F1CC8DE07001D39C8 /* ZHPickView.m */,
 			);
 			name = PickerView;
+			sourceTree = "<group>";
+		};
+		D3F6021A1CC9C51B00580CBC /* hotel */ = {
+			isa = PBXGroup;
+			children = (
+				D3F6021B1CC9C52500580CBC /* hotel1.JPG */,
+				D3F6021C1CC9C52500580CBC /* hotel2.JPG */,
+				D3F6021D1CC9C52500580CBC /* hotel3.JPG */,
+				D3F6021E1CC9C52500580CBC /* hotel4.JPG */,
+				D3F6021F1CC9C52500580CBC /* hotel5.JPG */,
+				D3F602201CC9C52500580CBC /* hotel6.JPG */,
+				D3F602211CC9C52500580CBC /* hotel7.JPG */,
+				D3F602221CC9C52500580CBC /* hotel8.JPG */,
+				D3F602231CC9C52500580CBC /* hotel9.JPG */,
+				D3F602241CC9C52500580CBC /* hotel10.JPG */,
+				D3F602251CC9C52500580CBC /* hotel11.JPG */,
+				D3F602261CC9C52500580CBC /* hotel12.JPG */,
+			);
+			name = hotel;
 			sourceTree = "<group>";
 		};
 		D3F6C1271CC60F6800C36C0E /* Controller */ = {
@@ -571,6 +627,7 @@
 		D3FF9DB41CB4E278005C6A45 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D3F6021A1CC9C51B00580CBC /* hotel */,
 				D35333081CBE2B35001E326D /* ScrollViewImage */,
 				D3FF9DB51CB4E278005C6A45 /* TabIcon */,
 			);
@@ -758,14 +815,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F6022C1CC9C52500580CBC /* hotel6.JPG in Resources */,
 				D35333151CBE2B35001E326D /* 4.jpg in Resources */,
 				D35333131CBE2B35001E326D /* 2.jpg in Resources */,
+				D3F6022A1CC9C52500580CBC /* hotel4.JPG in Resources */,
+				D3F602281CC9C52500580CBC /* hotel2.JPG in Resources */,
 				D35333171CBE2B35001E326D /* 6.jpg in Resources */,
 				D3FF9DC61CB4E281005C6A45 /* tab_baoxiang_selected@2x.png in Resources */,
 				2FE858061C9657A6007E9B04 /* LaunchScreen.storyboard in Resources */,
 				D3FF9DD51CB4E281005C6A45 /* tab_person_unselected@3x.png in Resources */,
 				D3FF9DD31CB4E281005C6A45 /* tab_person_selected@3x.png in Resources */,
 				D35333141CBE2B35001E326D /* 3.jpg in Resources */,
+				D3F602311CC9C52500580CBC /* hotel11.JPG in Resources */,
+				D3F6022D1CC9C52500580CBC /* hotel7.JPG in Resources */,
 				D3FF9DD41CB4E281005C6A45 /* tab_person_unselected@2x.png in Resources */,
 				D3FF9DC91CB4E281005C6A45 /* tab_baoxiang_unselected@3x.png in Resources */,
 				D35333121CBE2B35001E326D /* 1.jpg in Resources */,
@@ -773,19 +835,27 @@
 				2FE858031C9657A6007E9B04 /* Assets.xcassets in Resources */,
 				D3FF9DCA1CB4E281005C6A45 /* tab_home_selected@2x.png in Resources */,
 				D3FF9DCD1CB4E281005C6A45 /* tab_home_unselected@3x.png in Resources */,
+				D3F602191CC9C38000580CBC /* HotelCell.xib in Resources */,
 				D35332FC1CBDF0AA001E326D /* AdDataPlist.plist in Resources */,
 				D3FF9DD01CB4E281005C6A45 /* tab_money_unselected@2x.png in Resources */,
 				D3FF9DCE1CB4E281005C6A45 /* tab_money_selectd@3x.png in Resources */,
+				D3F6022E1CC9C52500580CBC /* hotel8.JPG in Resources */,
+				D3F602321CC9C52500580CBC /* hotel12.JPG in Resources */,
 				2FE858011C9657A6007E9B04 /* Main.storyboard in Resources */,
 				D3FF9DCF1CB4E281005C6A45 /* tab_money_selected@2x.png in Resources */,
 				D35333191CBE2B35001E326D /* 8.jpg in Resources */,
 				D3FF9DD11CB4E281005C6A45 /* tab_money_unselected@3x.png in Resources */,
 				D3FF9DD21CB4E281005C6A45 /* tab_person_selected@2x.png in Resources */,
+				D3F602291CC9C52500580CBC /* hotel3.JPG in Resources */,
 				D35333161CBE2B35001E326D /* 5.jpg in Resources */,
 				D3FF9DC71CB4E281005C6A45 /* tab_baoxiang_selected@3x.png in Resources */,
+				D3F6022B1CC9C52500580CBC /* hotel5.JPG in Resources */,
 				D35333181CBE2B35001E326D /* 7.jpg in Resources */,
 				D353331A1CBE2B35001E326D /* 9.jpg in Resources */,
 				D3F14E421CC8DEED001D39C8 /* city.plist in Resources */,
+				D3F602301CC9C52500580CBC /* hotel10.JPG in Resources */,
+				D3F602271CC9C52500580CBC /* hotel1.JPG in Resources */,
+				D3F6022F1CC9C52500580CBC /* hotel9.JPG in Resources */,
 				D3FF9DC81CB4E281005C6A45 /* tab_baoxiang_unselected@2x.png in Resources */,
 				D3FF9DCC1CB4E281005C6A45 /* tab_home_unselected@2x.png in Resources */,
 			);
@@ -880,6 +950,7 @@
 				2FE857F81C9657A6007E9B04 /* main.m in Sources */,
 				D35333041CBE14C2001E326D /* SXScrollView.m in Sources */,
 				D35333201CBE4514001E326D /* SXPageControl.m in Sources */,
+				D3F602351CC9C80700580CBC /* hotelModel.m in Sources */,
 				D3FE79D41CC0DC96004A3663 /* BrowsePictureViewController.m in Sources */,
 				D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */,
 				D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */,
@@ -894,6 +965,7 @@
 				2FE858401C965D18007E9B04 /* DynamicViewController.m in Sources */,
 				D35332FD1CBDF0AA001E326D /* AdScrollView.m in Sources */,
 				2FE858461C965DB1007E9B04 /* MineViewController.m in Sources */,
+				D3F602171CC9C19F00580CBC /* HotelCell.m in Sources */,
 				D3F14E201CC8BD88001D39C8 /* SelectHotelViewController.m in Sources */,
 				D3F14E401CC8DE07001D39C8 /* ZHPickView.m in Sources */,
 			);

@@ -36,27 +36,37 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
     
-    RoadModel *model = [[RoadModel alloc]init];
-    NSDictionary *dict= [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"number",@"北京",@"startPoint",@"上海",@"endPoint",@"飞机",@"tripType",@"2016-1-1",@"startTime",@"2016-1-2",@"startLiveTime",@"2016-1-3",@"endLiveTime",@"如家",@"hotel", nil];
-    [model setValuesForKeysWithDictionary:dict];
-    [self.roadArray addObject:model];
+//    RoadModel *model = [[RoadModel alloc]init];
+//    NSDictionary *dict= [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"number",@"北京",@"startPoint",@"上海",@"endPoint",@"飞机",@"tripType",@"2016-1-1",@"startTime",@"2016-1-2",@"startLiveTime",@"2016-1-3",@"endLiveTime",@"如家",@"hotel", nil];
+//    [model setValuesForKeysWithDictionary:dict];
+//    [self.roadArray addObject:model];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData:) name:@"SXUpdateRoadsNotification" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData:) name:SXRoadNotification object:nil];
 
     // Do any additional setup after loading the view.
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 
 #pragma mark - Private Methods
 
 - (void)addNewRoadClick{
+    RoadModel *model = [self.roadArray lastObject];
+    
     SetRoadViewController *vc = [[SetRoadViewController alloc]init];
+    vc.startPoint = model.endPoint;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)commitOrderClick{
-    CommitOrderViewController *vc = [[CommitOrderViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"订单已经生成" message:@"请到我的订单中去查看" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [self.navigationController popViewControllerAnimated:YES];
+//    CommitOrderViewController *vc = [[CommitOrderViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)reloadData:(NSNotification *)notification{
@@ -70,10 +80,16 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (self.roadArray.count == 0) {
+        return 0;
+    }
     return 1;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    if (self.roadArray.count == 0) {
+        return 1;
+    }
     return self.roadArray.count;
 }
 
@@ -113,6 +129,9 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.roadArray.count == 0) {
+        return CGSizeZero;
+    }
     return CGSizeMake(SX_SCREEN_WIDTH, 200);
     
 }
@@ -122,12 +141,15 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (self.roadArray.count == 0) {
+        return CGSizeZero;
+    }
     return CGSizeMake(SX_SCREEN_WIDTH, 30);
     
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-    if (section == self.roadArray.count - 1) {
+    if (section == self.roadArray.count - 1 || self.roadArray.count == 0) {
         return CGSizeMake(SX_SCREEN_WIDTH, 100);
     }
     return CGSizeZero;
