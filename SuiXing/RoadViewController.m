@@ -20,6 +20,11 @@
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSMutableArray *roadArray;
+@property (assign, nonatomic) BOOL isEdit;
+@property (assign, nonatomic) BOOL editStatus;
+@property (assign, nonatomic) NSInteger selectItem;
+@property (strong, nonatomic) UIBarButtonItem *editBarButtonItem;
+@property (strong, nonatomic) NSIndexPath *currentIndexPath;
 
 @end
 
@@ -30,16 +35,20 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"自由行";
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.collectionView];
-    
-//    RoadModel *model = [[RoadModel alloc]init];
-//    NSDictionary *dict= [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"number",@"北京",@"startPoint",@"上海",@"endPoint",@"飞机",@"tripType",@"2016-1-1",@"startTime",@"2016-1-2",@"startLiveTime",@"2016-1-3",@"endLiveTime",@"如家",@"hotel", nil];
-//    [model setValuesForKeysWithDictionary:dict];
-//    [self.roadArray addObject:model];
+    _isEdit = NO;
+    _editStatus = NO;
+    _editBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editClick)];
+    self.navigationItem.rightBarButtonItem = _editBarButtonItem;
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadData:) name:SXRoadNotification object:nil];
 
@@ -53,6 +62,17 @@
 
 #pragma mark - Private Methods
 
+- (void)editClick{
+    [self.editBarButtonItem setTitle:@"请选择"];
+
+    if (!_editStatus && _currentIndexPath) {
+        [self.roadArray removeObjectAtIndex:_currentIndexPath.section];
+        [self.collectionView reloadData];
+        [self.editBarButtonItem setTitle:@"编辑"];
+    }
+    _editStatus = YES;
+}
+
 - (void)addNewRoadClick{
     RoadModel *model = [self.roadArray lastObject];
     
@@ -65,16 +85,29 @@
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"订单已经生成" message:@"请到我的订单中去查看" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
     [self.navigationController popViewControllerAnimated:YES];
-//    CommitOrderViewController *vc = [[CommitOrderViewController alloc]init];
-//    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
+- (void)editButtonClick:(UIButton *)button{
+    _isEdit = YES;
+    _selectItem = button.tag;
+    RoadModel *model = self.roadArray[_selectItem];
+    SetRoadViewController *vc = [[SetRoadViewController alloc]init];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)reloadData:(NSNotification *)notification{
-    
-    NSLog(@"object = %@",notification.object);
-    RoadModel *model = notification.object;
-    [self.roadArray addObject:model];
-    [self.collectionView reloadData];
+    if (_isEdit) {
+        self.roadArray[_selectItem] = notification.object;
+        [self.collectionView reloadData];
+    }else{
+        RoadModel *model = notification.object;
+        [self.roadArray addObject:model];
+        [self.collectionView reloadData];
+    }
+    _isEdit = NO;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -122,6 +155,8 @@
     static NSString *cellIde = @"RoadCell";
     RoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIde forIndexPath:indexPath];
     cell.model = model;
+    cell.editButton.tag = indexPath.section;
+    [cell.editButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
 }
@@ -159,7 +194,15 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (_editStatus) {
+        _currentIndexPath = indexPath;
+        _editStatus = NO;
+        
+        RoadCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RoadCell" forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor darkGrayColor];
+        [self.editBarButtonItem setTitle:@"删除"];
+    }
+   
 }
 
 #pragma mark - Property
@@ -190,6 +233,7 @@
 }
 
 - (NSMutableArray *)roadArray{
+    
     if (!_roadArray) {
         _roadArray = [NSMutableArray array];
     }

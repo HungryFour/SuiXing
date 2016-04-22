@@ -12,5 +12,6 @@
 @interface RoadCell : UICollectionViewCell
 
 @property (strong, nonatomic) RoadModel *model;
+@property (strong, nonatomic) UIButton *editButton;
 
 @end

@@ -286,9 +286,9 @@
     [self removeFromSuperview];
 }
 -(void)show{
-    [UIView animateWithDuration:0.5 animations:^{
-        [[UIApplication sharedApplication].keyWindow addSubview:self];
-    }];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    
 }
 -(void)doneClick
 {

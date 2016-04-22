@@ -14,10 +14,10 @@
 
 #define Cell_Name @[@"人数",@"选择起点",@"选择下一站",@"选择出行方式",@"出发时间",@"选择入住时间",@"选择离店时间",@"选择酒店"]
 #define Key @[@"number",@"startPoint",@"endPoint",@"tripType",@"startTime",@"startLiveTime",@"endLiveTime",@"hotel"]
+
 @interface SetRoadViewController () <UITableViewDelegate,UITableViewDataSource,ZHPickViewDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) RoadModel *model;
 @property (strong, nonatomic) ZHPickView *pickview;
 @property (strong, nonatomic) NSIndexPath *currentIndexPath;
 
@@ -84,9 +84,50 @@
     }
     cell.leftLabel.text = Cell_Name[indexPath.row];
     
-    if (indexPath.row == 1) {
-        cell.rightLabel.text = self.model.startPoint;
-
+    switch (indexPath.row) {
+        case 0:
+        {
+            cell.rightLabel.text = self.model.number;
+        }
+            break;
+        case 1:
+        {
+            cell.rightLabel.text = self.model.startPoint;
+        }
+            break;
+        case 2:
+        {
+            cell.rightLabel.text = self.model.endPoint;
+        }
+            break;
+        case 3:
+        {
+            cell.rightLabel.text = self.model.tripType;
+        }
+            break;
+        case 4:
+        {
+            cell.rightLabel.text = self.model.startTime;
+        }
+            break;
+        case 5:
+        {
+            cell.rightLabel.text = self.model.startLiveTime;
+        }
+            break;
+        case 6:
+        {
+            cell.rightLabel.text = self.model.endLiveTime;
+        }
+            break;
+        case 7:
+        {
+            cell.rightLabel.text = self.model.hotel;
+        }
+            break;
+            
+        default:
+            break;
     }
     return cell;
 }
@@ -214,7 +255,8 @@
             
         default:
             break;
-    }}
+    }
+}
 
 #pragma mark - Property
 

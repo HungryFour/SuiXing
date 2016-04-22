@@ -67,6 +67,7 @@
 		D3F602311CC9C52500580CBC /* hotel11.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602251CC9C52500580CBC /* hotel11.JPG */; };
 		D3F602321CC9C52500580CBC /* hotel12.JPG in Resources */ = {isa = PBXBuildFile; fileRef = D3F602261CC9C52500580CBC /* hotel12.JPG */; };
 		D3F602351CC9C80700580CBC /* hotelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F602341CC9C80700580CBC /* hotelModel.m */; };
+		D3F6023A1CC9F27700580CBC /* SettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F602391CC9F27700580CBC /* SettingManager.m */; };
 		D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */; };
 		D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C12E1CC6127100C36C0E /* UIView+extension.m */; };
 		D3F6C1321CC7271E00C36C0E /* SXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F6C1311CC7271E00C36C0E /* SXInteractiveTransition.m */; };
@@ -208,6 +209,9 @@
 		D3F602261CC9C52500580CBC /* hotel12.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotel12.JPG; sourceTree = "<group>"; };
 		D3F602331CC9C80700580CBC /* hotelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotelModel.h; sourceTree = "<group>"; };
 		D3F602341CC9C80700580CBC /* hotelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotelModel.m; sourceTree = "<group>"; };
+		D3F602371CC9F27700580CBC /* SettingDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingDefine.h; sourceTree = "<group>"; };
+		D3F602381CC9F27700580CBC /* SettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingManager.h; sourceTree = "<group>"; };
+		D3F602391CC9F27700580CBC /* SettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingManager.m; sourceTree = "<group>"; };
 		D3F6C12A1CC6112900C36C0E /* InfoHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHeaderCell.h; sourceTree = "<group>"; };
 		D3F6C12B1CC6112900C36C0E /* InfoHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHeaderCell.m; sourceTree = "<group>"; };
 		D3F6C12D1CC6127100C36C0E /* UIView+extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extension.h"; sourceTree = "<group>"; };
@@ -599,6 +603,16 @@
 			name = hotel;
 			sourceTree = "<group>";
 		};
+		D3F602361CC9F26D00580CBC /* SettingManager */ = {
+			isa = PBXGroup;
+			children = (
+				D3F602371CC9F27700580CBC /* SettingDefine.h */,
+				D3F602381CC9F27700580CBC /* SettingManager.h */,
+				D3F602391CC9F27700580CBC /* SettingManager.m */,
+			);
+			name = SettingManager;
+			sourceTree = "<group>";
+		};
 		D3F6C1271CC60F6800C36C0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +683,7 @@
 		D3FF9DD71CB4E463005C6A45 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D3F602361CC9F26D00580CBC /* SettingManager */,
 				D3FF9DD91CB4E478005C6A45 /* SXRecording */,
 				D3FF9DD81CB4E475005C6A45 /* SXNetworking */,
 			);
@@ -931,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */,
+				D3F6023A1CC9F27700580CBC /* SettingManager.m in Sources */,
 				D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */,
 				2FE858371C965A00007E9B04 /* TabBarViewController.m in Sources */,
 				D3F14E141CC8AE90001D39C8 /* SetRoadCell.m in Sources */,

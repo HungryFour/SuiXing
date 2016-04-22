@@ -16,6 +16,7 @@
 #import "UIView+Addition.h"
 #import "SXPresentTransition.h"
 #import "UIView+extension.h"
+#import "SettingManager.h"
 
 
 #define SXRoadNotification @"SXUpdateRoadsNotification"

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RoadModel.h"
 
 @interface SetRoadViewController : UIViewController
 
 @property (strong, nonatomic) NSString *startPoint;
+@property (strong, nonatomic) RoadModel *model;
 
 @end

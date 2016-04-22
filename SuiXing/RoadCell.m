@@ -20,6 +20,7 @@
 @property (strong, nonatomic) UILabel *endLiveLabel;
 @property (strong, nonatomic) UILabel *totalTimeLabel;
 
+
 @end
 
 @implementation RoadCell
@@ -35,6 +36,7 @@
         [self.roadView addSubview:self.startLiveLabel];
         [self.roadView addSubview:self.endLiveLabel];
         [self.roadView addSubview:self.totalTimeLabel];
+        [self.roadView addSubview:self.editButton];
         
     }
     return self;
@@ -162,6 +164,19 @@
         _totalTimeLabel.textAlignment = NSTextAlignmentLeft;
     }
     return _totalTimeLabel;
+}
+
+- (UIButton *)editButton{
+    if (!_editButton) {
+        _editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_editButton setFrame:CGRectMake(self.roadView.frame.size.width - 10 - 50, 5, 50, self.roadView.size.height / 7 - 10)];
+        [_editButton setTitle:@"编辑" forState:UIControlStateNormal];
+        _editButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        _editButton.titleLabel.textColor = UIColorFromRGB(0xffffff);
+        _editButton.backgroundColor = UIColorFromRGB(0x118AD2);
+        
+    }
+    return _editButton;
 }
 
 
