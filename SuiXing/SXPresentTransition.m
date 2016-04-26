@@ -8,7 +8,6 @@
 
 #import "SXPresentTransition.h"
 #import "IndexViewController.h"
-#import "BrowsePictureViewController.h"
 #import "TopicRoadCell.h"
 
 @interface SXPresentTransition ()

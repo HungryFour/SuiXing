@@ -2,7 +2,7 @@
 //  UIView+Addition.m
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/15.
+//  Created by 关静 on 16/4/15.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 

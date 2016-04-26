@@ -15,7 +15,9 @@ PODS:
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
+  - BmobSDK (1.6.7)
   - Masonry (0.6.4)
+  - SingleLineInput (1.0.7)
   - SVProgressHUD (2.0)
   - YYKit (1.0.3):
     - YYKit/no-arc (= 1.0.3)
@@ -24,14 +26,18 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Aspects
+  - BmobSDK
   - Masonry
+  - SingleLineInput
   - SVProgressHUD
   - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  BmobSDK: ae6abd7f08a8150668687c880ac9ec93f1bf25b6
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  SingleLineInput: 4def171b91a2325d315bc8896f952b83f9941666
   SVProgressHUD: e9e7c893686a20da55a28015ed384d9425e15479
   YYKit: fa66d61240458f14562c33c85c91d11131e43261
 

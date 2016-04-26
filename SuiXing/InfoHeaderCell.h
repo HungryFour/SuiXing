@@ -2,7 +2,7 @@
 //  InfoHeaderCell.h
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/19.
+//  Created by 关静 on 16/4/19.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 

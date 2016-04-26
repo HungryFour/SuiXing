@@ -2,7 +2,7 @@
 //  SelectHotelViewController.m
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/21.
+//  Created by 关静 on 16/4/21.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
@@ -84,7 +84,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIde = @"HotelCell";
+    //static NSString *cellIde = @"HotelCell";
 //    HotelCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIde];
 //    if (cell == nil) {
 //        cell = [[[NSBundle mainBundle]loadNibNamed:@"HotelCell" owner:self options:nil]firstObject];

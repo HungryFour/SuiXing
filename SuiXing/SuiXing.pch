@@ -2,7 +2,7 @@
 //  SuiXing.pch
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/6.
+//  Created by 关静 on 16/4/6.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
@@ -17,6 +17,14 @@
 #import "SXPresentTransition.h"
 #import "UIView+extension.h"
 #import "SettingManager.h"
+#import "MF_ApiConfig.h"
+#import "NSObject+common.h"
+#import <BmobSDK/Bmob.h>
+
+//设置登录状态
+#define setLogin(x) [SettingManager setBoolValueToUserDefault:x forKey:@"isLogin"]
+//登录状态
+#define LoginStatus [SettingManager getBoolValueforKey:@"isLogin"]
 
 
 #define SXRoadNotification @"SXUpdateRoadsNotification"

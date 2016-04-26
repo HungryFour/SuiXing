@@ -2,7 +2,7 @@
 //  HotelCell.m
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/22.
+//  Created by 关静 on 16/4/22.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,35 @@
 
 #pragma mark - Create Method
 
+//添加启动页
+- (void)addStartPageImagView{
+    NSArray *imageArray = @[@"desk1.jpeg",@"desk2.jpg",@"desk3.jpg",@"desk4.jpg"];
+    UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SX_SCREEN_WIDTH, SX_SCREEN_HEIGHT)];
+    image.image = [UIImage imageNamed:imageArray[(random() % (imageArray.count - 1))]];
+    [self.window addSubview:image];
+    [UIView animateKeyframesWithDuration:1.5 delay:1.5 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
+        image.alpha = 0.6;
+        image.transform = CGAffineTransformMakeScale(1.2, 1.2);
+    } completion:^(BOOL finished) {
+        if (LoginStatus) {
+            //初始化tabbar
+            [self initTabBarController];
+        }else{
+            LoginViewController *login = [[LoginViewController alloc]init];
+            self.window.rootViewController = login;
+        }
+        [image removeFromSuperview];
+        
+    }];
+
+}
+
+//注册Bmob
+- (void)registerBmob{
+    [Bmob registerWithAppKey:@"94622e03bb28e43d8e394e24df017411"];
+}
+
+//初始化tabBar
 - (void)initTabBarController{
     TabBarViewController *tabBar = [[TabBarViewController alloc]init];
     self.window.rootViewController = tabBar;
@@ -43,11 +73,14 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    //初始化TabBarController
-    [self initTabBarController];
+    self.window.rootViewController = [[UIViewController alloc]init];
+
+    //添加启动页
+    [self addStartPageImagView];
     //设置导航条样式
     [self initNavigationBarInterface];
+    //注册Bmob
+    [self registerBmob];
     
     
     return YES;

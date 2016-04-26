@@ -2,7 +2,7 @@
 //  SXIndexHeaderView.h
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/14.
+//  Created by 关静 on 16/4/14.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
