@@ -11,10 +11,6 @@
 
 @interface BmobObject (Subclass)
 
-@property (copy, nonatomic) NSArray *selectedKeyArray;
-
-@property (copy, nonatomic) NSArray *ignoredKeyArray;
-
 +(BmobQuery *)query;
 /**
  *  保存数据

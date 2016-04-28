@@ -59,13 +59,6 @@ extern NSString *const  kBmobInitFailNotification;
  */
 +(NSString*)getServerTimestamp;
 
-/**
- *  异步调用获取服务器时间戳的方法
- *
- *  @param completion 时间戳字符串和错误信息
- */
-+(void)serverTimestamp:(void(^)(NSString *timestamp,NSError *error))completion;
-
 
 /**
  *  在应用进入前台是调用
@@ -78,5 +71,9 @@ extern NSString *const  kBmobInitFailNotification;
 + (void)getAllTableSchemasWithCallBack:(BmobAllTableSchemasBlock)block;
 
 + (void)getTableSchemasWithClassName:(NSString*)tableName callBack:(BmobTableSchemasBlock)block;
+
+
+
+
 
 @end

@@ -750,7 +750,7 @@ THE SOFTWARE.
 
 ## SVProgressHUD
 
-Copyright (c) 2011-2016 Sam Vermette, Tobias Tiemerding and contributors.
+Copyright (c) 2011-2014 Sam Vermette
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -777,7 +777,6 @@ A different license may apply to other resources included in this package,
 including Freepik Icons. Please consult their 
 respective headers for the terms of their individual licenses.
 
-
 ## SingleLineInput
 
 Copyright (c) 2015 Diogo Maximo <dcmaximo@gmail.com>
@@ -801,7 +800,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## YYKit
+## YYCategories
 
 The MIT License (MIT)
 

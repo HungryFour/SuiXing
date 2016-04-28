@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TabBarViewController.h"
+#import "SXTabBarController.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate ()
@@ -20,6 +20,7 @@
 
 //添加启动页
 - (void)addStartPageImagView{
+    
     NSArray *imageArray = @[@"desk1.jpeg",@"desk2.jpg",@"desk3.jpg",@"desk4.jpg"];
     UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SX_SCREEN_WIDTH, SX_SCREEN_HEIGHT)];
     image.image = [UIImage imageNamed:imageArray[(random() % (imageArray.count - 1))]];
@@ -28,7 +29,7 @@
         image.alpha = 0.6;
         image.transform = CGAffineTransformMakeScale(1.2, 1.2);
     } completion:^(BOOL finished) {
-        if (LoginStatus) {
+        if (!LoginStatus) {
             //初始化tabbar
             [self initTabBarController];
         }else{
@@ -48,8 +49,8 @@
 
 //初始化tabBar
 - (void)initTabBarController{
-    TabBarViewController *tabBar = [[TabBarViewController alloc]init];
-    self.window.rootViewController = tabBar;
+    SXTabBarController *tabBar = [[SXTabBarController alloc]init];
+    self.window.rootViewController = tabBar.tabBarController;
 }
 
 - (void)initNavigationBarInterface{
