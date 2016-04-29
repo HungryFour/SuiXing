@@ -8,6 +8,7 @@
 
 #import "SXPlusButtonSubclass.h"
 #import "CYLTabBarController.h"
+#import "selectImageViewController.h"
 
 @interface SXPlusButtonSubclass ()<UIActionSheetDelegate> {
     CGFloat _buttonImageHeight;
@@ -120,7 +121,7 @@
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    
+    selectImageViewController *vc = [[selectImageViewController alloc]init];
 }
 
 #pragma mark - CYLPlusButtonSubclassing

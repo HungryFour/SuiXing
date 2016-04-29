@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MLSelectPhoto.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>303AA863C0C7A02642FC59D91FDE9456</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>30F414CF2285D2C1B12C7E558D20C943</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B138F6B04266E32D45F16896FB0920F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53C1D74F0B0790D871C6A53994C742D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87043E5CBFD40FFE0A063AC3D2615D37</key>
+		<key>90EB3F412485562A5B0348E739E34186</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8973A025CC467E640ACAB9923156F9E4</key>
+		<key>9B7079F8CCCA4FEC05E36BFF7B8F0BC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -73,16 +93,6 @@
 			<true/>
 		</dict>
 		<key>A33984AE9F338D4A01457B1B9C1F262D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A7103E34869AE2211E7D132374E0D049</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DBEB3FDC85E22C750E31DA251265E2B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -17,6 +17,8 @@
 		0AE682CB1CD211FF00C2B3DA /* CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE682C51CD211FF00C2B3DA /* CYLTabBar.m */; };
 		0AE682CC1CD211FF00C2B3DA /* CYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE682C71CD211FF00C2B3DA /* CYLPlusButton.m */; };
 		0AE682CD1CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE682C91CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m */; };
+		0AEBDDAB1CD2160E0092808B /* selectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDAA1CD2160E0092808B /* selectImageViewController.m */; };
+		0AEBDDAE1CD216490092808B /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDAD1CD216490092808B /* PublishViewController.m */; };
 		2FE857F81C9657A6007E9B04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857F71C9657A6007E9B04 /* main.m */; };
 		2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FA1C9657A6007E9B04 /* AppDelegate.m */; };
 		2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FD1C9657A6007E9B04 /* ViewController.m */; };
@@ -161,6 +163,10 @@
 		0AE682C71CD211FF00C2B3DA /* CYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButton.m; sourceTree = "<group>"; };
 		0AE682C81CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CYLJumpToOtherTabBarControllerItem.h"; sourceTree = "<group>"; };
 		0AE682C91CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CYLJumpToOtherTabBarControllerItem.m"; sourceTree = "<group>"; };
+		0AEBDDA91CD2160E0092808B /* selectImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectImageViewController.h; sourceTree = "<group>"; };
+		0AEBDDAA1CD2160E0092808B /* selectImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectImageViewController.m; sourceTree = "<group>"; };
+		0AEBDDAC1CD216490092808B /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
+		0AEBDDAD1CD216490092808B /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
 		2FE857F31C9657A6007E9B04 /* SuiXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuiXing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE857F71C9657A6007E9B04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FE857F91C9657A6007E9B04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -376,6 +382,17 @@
 			name = CYLTabBarController;
 			sourceTree = "<group>";
 		};
+		0AEBDDA81CD215A50092808B /* 发表游记 */ = {
+			isa = PBXGroup;
+			children = (
+				0AEBDDA91CD2160E0092808B /* selectImageViewController.h */,
+				0AEBDDAA1CD2160E0092808B /* selectImageViewController.m */,
+				0AEBDDAC1CD216490092808B /* PublishViewController.h */,
+				0AEBDDAD1CD216490092808B /* PublishViewController.m */,
+			);
+			name = "发表游记";
+			sourceTree = "<group>";
+		};
 		2FE857EA1C9657A6007E9B04 = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +554,7 @@
 		2FE858341C96595D007E9B04 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				0AEBDDA81CD215A50092808B /* 发表游记 */,
 				0AE682A31CD201FD00C2B3DA /* SXTabBarController.h */,
 				0AE682A41CD201FD00C2B3DA /* SXTabBarController.m */,
 				0AE682A61CD2079B00C2B3DA /* SXPlusButtonSubclass.h */,
@@ -1127,6 +1145,7 @@
 				D3FE79D11CC0C6E2004A3663 /* UIView+Addition.m in Sources */,
 				D3F6023A1CC9F27700580CBC /* SettingManager.m in Sources */,
 				D3F6C12C1CC6112900C36C0E /* InfoHeaderCell.m in Sources */,
+				0AEBDDAB1CD2160E0092808B /* selectImageViewController.m in Sources */,
 				D3F14E141CC8AE90001D39C8 /* SetRoadCell.m in Sources */,
 				D3F14E111CC8A99E001D39C8 /* SetRoadViewController.m in Sources */,
 				0AE682CB1CD211FF00C2B3DA /* CYLTabBar.m in Sources */,
@@ -1154,6 +1173,7 @@
 				D3FF9DDE1CB4E5A5005C6A45 /* SXViewControllerInteceptor.m in Sources */,
 				0AE682CC1CD211FF00C2B3DA /* CYLPlusButton.m in Sources */,
 				D35333261CBE5A8B001E326D /* TopicRoadCell.m in Sources */,
+				0AEBDDAE1CD216490092808B /* PublishViewController.m in Sources */,
 				D35332F31CBDEF93001E326D /* SXScrollCell.m in Sources */,
 				0AE682CD1CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m in Sources */,
 				D3FE79CE1CC0C413004A3663 /* RoadViewController.m in Sources */,
