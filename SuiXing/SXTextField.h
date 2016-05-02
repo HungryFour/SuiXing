@@ -29,6 +29,12 @@
 @property (strong, nonatomic) UIColor *sx_textColor;
 @property (assign, nonatomic) CGFloat sx_textFontSize;
 
+//override property
+@property (assign, nonatomic)CGFloat sx_textX;
+@property (assign, nonatomic)CGFloat sx_borderX;
+@property (assign, nonatomic)CGFloat sx_placeHolderX;
+@property (assign, nonatomic)CGFloat sx_editingX;
+
 - (void)show;
 
 @end

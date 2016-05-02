@@ -33,7 +33,10 @@
         self.sx_text = @"";
         self.sx_textFontSize = 15;
         
-        
+        self.sx_borderX = 0;
+        self.sx_textX = 30;
+        self.sx_placeHolderX = 30;
+        self.sx_editingX = 30;
     }
     return self;
 }
@@ -41,19 +44,19 @@
 #pragma mark - Override
 
 - (CGRect)textRectForBounds:(CGRect)bounds{
-    return CGRectMake(30, bounds.origin.y, bounds.size.width, bounds.size.height);
+    return CGRectMake(self.sx_textX, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 - (CGRect)borderRectForBounds:(CGRect)bounds{
-    return CGRectMake(0, bounds.size.height - 1, bounds.size.width, bounds.size.height);
+    return CGRectMake(self.sx_borderX, bounds.size.height - 1, bounds.size.width, bounds.size.height);
 }
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds{
-    return CGRectMake(30, bounds.origin.y, bounds.size.width, bounds.size.height);
+    return CGRectMake(self.sx_placeHolderX, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 - (CGRect)editingRectForBounds:(CGRect)bounds{
-    return CGRectMake(30, bounds.origin.y, bounds.size.width, bounds.size.height);
+    return CGRectMake(self.sx_editingX, bounds.origin.y, bounds.size.width, bounds.size.height);
 }
 
 #pragma mark - methods

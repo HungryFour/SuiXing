@@ -1,8 +1,8 @@
 //
-//  LoginView.h
+//  RegisterView.h
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/26.
+//  Created by 王阳 on 16/5/2.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 
 @end
 
-@interface LoginView : UIView
+@interface RegisterView : UIView
 
 @property (weak, nonatomic) id<ButtonClickDelegate> delegate;
 

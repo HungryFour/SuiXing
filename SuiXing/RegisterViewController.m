@@ -1,43 +1,42 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  SuiXing
 //
-//  Created by 王阳 on 16/4/25.
+//  Created by 王阳 on 16/5/2.
 //  Copyright © 2016年 yang. All rights reserved.
 //
 
-#import "LoginViewController.h"
-#import <UIImage+YYAdd.h>
-#import "LoginView.h"
 #import "RegisterViewController.h"
+#import "RegisterView.h"
+#import <UIImage+YYAdd.h>
 
-@interface LoginViewController () <MFNetApiDelegate,ButtonClickDelegate>
+@interface RegisterViewController () <MFNetApiDelegate,ButtonClickDelegate>
 
 @property (strong, nonatomic) UIImageView *bgImageView;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) UIButton *backButton;
 
 @end
 
-@implementation LoginViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     
     [self.view addSubview:self.bgImageView];
-    LoginView *login = [[LoginView alloc]initWithFrame:self.view.bounds];
-    login.delegate = self;
-    [self.view addSubview:login];
-}
-
-#pragma mark - Private Method
-- (void)loginClick:(NSDictionary *)dict{
     [MF_NetAPIManager shareManager].delegate = self;
-    [[MF_NetAPIManager shareManager]loginWithParameters:dict];
+    RegisterView *registerView = [[RegisterView alloc]initWithFrame:self.view.bounds];
+    registerView.delegate = self;
+    [self.view addSubview:registerView];
+    [self.view addSubview:self.backButton];
 }
 
 - (void)registerClick:(NSDictionary *)dict{
-    RegisterViewController *vc = [[RegisterViewController alloc]init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [[MF_NetAPIManager shareManager]registerWithParameters:dict];
+}
+
+- (void)backClick{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - ButtonClickDelegate
@@ -50,10 +49,9 @@
 #pragma mark - MFNetApiDelegate
 
 - (void)manager:(MF_NetAPIManager *)manager requestApiManagerDidSuccess:(NSData *)data{
-    [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-    setLogin(YES);
+    [SVProgressHUD showSuccessWithStatus:@"注册成功"];
     [self dismissViewControllerAnimated:YES completion:^{
-        
+    
     }];
     NSLog(@"success");
 }
@@ -77,5 +75,14 @@
     }
     return _bgImageView;
 }
+
+- (UIButton *)backButton{
+    _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_backButton setFrame:CGRectMake(20, 30, 50, 50)];
+    [_backButton setTitle:@"返回" forState:UIControlStateNormal];
+    [_backButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    return _backButton;
+}
+
 
 @end

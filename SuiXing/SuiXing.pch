@@ -20,6 +20,8 @@
 #import "MF_ApiConfig.h"
 #import "NSObject+common.h"
 #import <BmobSDK/Bmob.h>
+#import "MF_NetAPIManager.h"
+#import <SVProgressHUD.h>
 
 //设置登录状态
 #define setLogin(x) [SettingManager setBoolValueToUserDefault:x forKey:@"isLogin"]

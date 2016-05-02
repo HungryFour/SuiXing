@@ -53,7 +53,7 @@
 }
 
 - (void)loadView:(UIViewController *)viewController{
-    DebugLog(@"%@ load view run",[viewController class]);
+    //DebugLog(@"%@ load view run",[viewController class]);
 }
 
 - (void)viewWillAppear:(UIViewController *)viewController{

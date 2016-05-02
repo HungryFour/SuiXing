@@ -19,6 +19,8 @@
 		0AE682CD1CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE682C91CD211FF00C2B3DA /* UIViewController+CYLJumpToOtherTabBarControllerItem.m */; };
 		0AEBDDAB1CD2160E0092808B /* selectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDAA1CD2160E0092808B /* selectImageViewController.m */; };
 		0AEBDDAE1CD216490092808B /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDAD1CD216490092808B /* PublishViewController.m */; };
+		0AEBDDB11CD6E9740092808B /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDB01CD6E9740092808B /* RegisterViewController.m */; };
+		0AEBDDB41CD6E9EB0092808B /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBDDB31CD6E9EB0092808B /* RegisterView.m */; };
 		2FE857F81C9657A6007E9B04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857F71C9657A6007E9B04 /* main.m */; };
 		2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FA1C9657A6007E9B04 /* AppDelegate.m */; };
 		2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FD1C9657A6007E9B04 /* ViewController.m */; };
@@ -167,6 +169,10 @@
 		0AEBDDAA1CD2160E0092808B /* selectImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectImageViewController.m; sourceTree = "<group>"; };
 		0AEBDDAC1CD216490092808B /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
 		0AEBDDAD1CD216490092808B /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
+		0AEBDDAF1CD6E9740092808B /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		0AEBDDB01CD6E9740092808B /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		0AEBDDB21CD6E9EB0092808B /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		0AEBDDB31CD6E9EB0092808B /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
 		2FE857F31C9657A6007E9B04 /* SuiXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuiXing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE857F71C9657A6007E9B04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FE857F91C9657A6007E9B04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -702,6 +708,10 @@
 			children = (
 				D3850A191CCE0B250046326B /* LoginViewController.h */,
 				D3850A1A1CCE0B250046326B /* LoginViewController.m */,
+				0AEBDDAF1CD6E9740092808B /* RegisterViewController.h */,
+				0AEBDDB01CD6E9740092808B /* RegisterViewController.m */,
+				0AEBDDB21CD6E9EB0092808B /* RegisterView.h */,
+				0AEBDDB31CD6E9EB0092808B /* RegisterView.m */,
 				D3F4CDF21CCF47A70071C586 /* LoginView.h */,
 				D3F4CDF31CCF47A70071C586 /* LoginView.m */,
 				D3F4CDFE1CCF5C580071C586 /* SXTextField.h */,
@@ -1154,6 +1164,7 @@
 				D3F6023D1CC9FB5500580CBC /* MoreNewRoadViewController.m in Sources */,
 				D35333231CBE5A7A001E326D /* NewRoadCell.m in Sources */,
 				D3F602401CC9FB6400580CBC /* TopicRoadViewController.m in Sources */,
+				0AEBDDB11CD6E9740092808B /* RegisterViewController.m in Sources */,
 				D3F14E171CC8BB4F001D39C8 /* CommitOrderViewController.m in Sources */,
 				D3F6C1321CC7271E00C36C0E /* SXInteractiveTransition.m in Sources */,
 				D3F6C12F1CC6127100C36C0E /* UIView+extension.m in Sources */,
@@ -1163,6 +1174,7 @@
 				D35332FB1CBDF0AA001E326D /* AdDataModel.m in Sources */,
 				2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */,
 				D35333071CBE268F001E326D /* SXScrollModel.m in Sources */,
+				0AEBDDB41CD6E9EB0092808B /* RegisterView.m in Sources */,
 				D353331D1CBE3897001E326D /* NSTimer+Addition.m in Sources */,
 				D3F4CE001CCF5C580071C586 /* SXTextField.m in Sources */,
 				D3850A1B1CCE0B250046326B /* LoginViewController.m in Sources */,

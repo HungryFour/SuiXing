@@ -26,6 +26,10 @@
 
 + (MF_NetAPIManager *)shareManager;
 
+//登录
+- (void)loginWithParameters:(NSDictionary *)parameters;
+//注册
+- (void)registerWithParameters:(NSDictionary *)parameters;
 //测试request
 - (void)send_TestRequestWithParameters:(NSDictionary *)parameters;
 

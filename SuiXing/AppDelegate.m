@@ -29,12 +29,11 @@
         image.alpha = 0.6;
         image.transform = CGAffineTransformMakeScale(1.2, 1.2);
     } completion:^(BOOL finished) {
-        if (!LoginStatus) {
-            //初始化tabbar
-            [self initTabBarController];
+        if (LoginStatus) {
+
         }else{
             LoginViewController *login = [[LoginViewController alloc]init];
-            self.window.rootViewController = login;
+            [self.window.rootViewController presentViewController:login animated:YES completion:nil];
         }
         [image removeFromSuperview];
         
@@ -76,6 +75,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[UIViewController alloc]init];
 
+    //初始化tabbar
+    [self initTabBarController];
+    
     //添加启动页
     [self addStartPageImagView];
     //设置导航条样式

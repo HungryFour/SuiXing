@@ -37,10 +37,20 @@
     return self;
 }
 
-#pragma mark - Override
+#pragma mark - event click
+- (void)loginClick{
+    NSString *username = self.userNameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    NSDictionary *dict = @{@"username" : username , @"password" : password};
+    if ([self.delegate respondsToSelector:@selector(buttonClickWithMethodName:parameters:)]) {
+        [self.delegate buttonClickWithMethodName:@"loginClick:" parameters:dict];
+    }
+}
 
-- (CGRect)editingRectForBounds:(CGRect)bounds{
-    return CGRectMake(20, bounds.origin.y, bounds.size.width, bounds.size.height);
+- (void)registerClick{
+    if ([self.delegate respondsToSelector:@selector(buttonClickWithMethodName:parameters:)]) {
+        [self.delegate buttonClickWithMethodName:@"registerClick:" parameters:nil];
+    }
 }
 
 #pragma mark - Property
@@ -98,6 +108,7 @@
         _loginButton.titleLabel.font = [UIFont systemFontOfSize:20];
         _loginButton.titleLabel.textColor = UIColorFromRGB(0xffffff);
         _loginButton.backgroundColor = UIColorFromRGB(0x118AD2);
+        [_loginButton addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _loginButton;
@@ -111,6 +122,7 @@
         _registerButton.titleLabel.font = [UIFont systemFontOfSize:20];
         _registerButton.titleLabel.textColor = UIColorFromRGB(0xffffff);
         _registerButton.backgroundColor = UIColorFromRGB(0x118AD2);
+        [_registerButton addTarget:self action:@selector(registerClick) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _registerButton;
@@ -122,6 +134,11 @@
         _thirdPartView.backgroundColor = [UIColor yellowColor];
     }
     return _thirdPartView;
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.userNameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 
 @end
