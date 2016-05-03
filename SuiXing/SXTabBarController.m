@@ -12,6 +12,7 @@
 #import "DynamicViewController.h"
 #import "MineViewController.h"
 #import "CYLTabBarController.h"
+#import "selectImageViewController.h"
 
 
 @interface SXBaseNavigationController : UINavigationController
@@ -51,7 +52,7 @@
         // 更多TabBar自定义设置：比如：tabBarItem 的选中和不选中文字和背景图片属性、tabbar 背景图片属性
         [self customizeTabBarAppearance:tabBarController];
         _tabBarController = tabBarController;
-
+        
     }
     return _tabBarController;
 }

@@ -8,6 +8,14 @@
 
 #import "CYLPlusButton.h"
 
+@protocol PlusButtonClick <NSObject>
+
+- (void)PlusButtonClickWithIndex:(NSInteger)index;
+
+@end
+
 @interface SXPlusButtonSubclass : CYLPlusButton <CYLPlusButtonSubclassing>
+
+@property (weak, nonatomic) id<PlusButtonClick> delegate;
 
 @end

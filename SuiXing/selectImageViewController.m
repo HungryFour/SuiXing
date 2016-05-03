@@ -23,10 +23,11 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"selectPhotos" style:UIBarButtonItemStyleDone target:self action:@selector(selectPhotos)];
-    
-    [self.view addSubview:self.tableView];
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"selectPhotos" style:UIBarButtonItemStyleDone target:self action:@selector(selectPhotos)];
+    [self selectPhotos];
+    //[self.view addSubview:self.tableView];
+
 }
 
 #pragma mark - Methods
