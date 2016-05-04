@@ -12,6 +12,8 @@
 #import "SXIndexHeaderView.h"
 #import "TopicRoadCell.h"
 #import "LoginViewController.h"
+
+
 @interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
@@ -40,8 +42,14 @@
     return YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewDidAppear:(BOOL)animated
+{
+    float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    float navigationHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    [self ysl_addTransitionDelegate:self];
+    [self ysl_pushTransitionAnimationWithToViewControllerImagePointY:statusHeight + navigationHeight
+                                                   animationDuration:0.3];
 }
 
 - (void)viewDidLoad {
@@ -153,6 +161,22 @@
         NSLog(@"click item : %ld", indexPath.row);
     }
 }
+
+- (UIImageView *)pushTransitionImageView
+{
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] firstObject]];
+    if ([cell isKindOfClass:[TopicRoadCell class]]) {
+        TopicRoadCell *roadCell = (TopicRoadCell *)cell;
+        return roadCell.imageView;
+    }
+    return nil;
+}
+
+- (UIImageView *)popTransitionImageView
+{
+    return nil;
+}
+
 
 #pragma mark - Property
 

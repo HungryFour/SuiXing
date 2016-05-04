@@ -10,7 +10,10 @@
 #import "hotelModel.h"
 #import "HotelCell.h"
 
-@interface SelectHotelViewController () <UITableViewDelegate,UITableViewDataSource>
+#import "YSLTransitionAnimator.h"
+#import "UIViewController+YSLTransition.h"
+
+@interface SelectHotelViewController () <UITableViewDelegate,UITableViewDataSource,YSLTransitionAnimatorDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *dataArray;
@@ -25,6 +28,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self initData];
+    
+    [self ysl_addTransitionDelegate:self];
+    [self ysl_pushTransitionAnimationWithToViewControllerImagePointY:64
+                                                   animationDuration:0.3];
+
+    
     // Do any additional setup after loading the view.
     
 }
@@ -97,12 +106,24 @@
     return cell;
 }
 
+- (UIImageView *)pushTransitionImageView
+{
+    HotelCell *cell = (HotelCell *)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    return cell.hotelImageView;
+}
+
+- (UIImageView *)popTransitionImageView
+{
+    return nil;
+}
+
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    hotelModel *model = self.dataArray[indexPath.row];
-    [[NSNotificationCenter defaultCenter]postNotificationName:SXHotelNotification object:model.hotelName];
-    [self.navigationController popViewControllerAnimated:YES];
+//    hotelModel *model = self.dataArray[indexPath.row];
+//    [[NSNotificationCenter defaultCenter]postNotificationName:SXHotelNotification object:model.hotelName];
+//    [self.navigationController popViewControllerAnimated:YES];
 
 }
 

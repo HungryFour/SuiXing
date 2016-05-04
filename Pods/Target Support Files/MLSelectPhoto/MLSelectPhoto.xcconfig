@@ -1,1 +1,0 @@
-MLSELECTPHOTO_OTHER_LDFLAGS = -framework "AssetsLibrary"

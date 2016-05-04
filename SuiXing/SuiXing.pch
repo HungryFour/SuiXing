@@ -22,9 +22,11 @@
 #import <BmobSDK/Bmob.h>
 #import "MF_NetAPIManager.h"
 #import <SVProgressHUD.h>
-#import <MLSelectPhoto.h>
+#import "SXThirdUrl.h"
+#import "YSLTransitionAnimator.h"
+#import "UIViewController+YSLTransition.h"
 
-//设置登录状态
+//设置登录状态
 #define setLogin(x) [SettingManager setBoolValueToUserDefault:x forKey:@"isLogin"]
 //登录状态
 #define LoginStatus [SettingManager getBoolValueforKey:@"isLogin"]

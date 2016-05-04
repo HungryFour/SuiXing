@@ -30,6 +30,9 @@
 - (void)loginWithParameters:(NSDictionary *)parameters;
 //注册
 - (void)registerWithParameters:(NSDictionary *)parameters;
+//游记上传图片
+- (void)uploadImage;
+
 //测试request
 - (void)send_TestRequestWithParameters:(NSDictionary *)parameters;
 

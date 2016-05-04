@@ -1,6 +1,0 @@
-module MLSelectPhoto {
-  umbrella header "MLSelectPhoto-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,6 +1,0 @@
-module SingleLineInput {
-  umbrella header "SingleLineInput-umbrella.h"
-
-  export *
-  module * { export * }
-}

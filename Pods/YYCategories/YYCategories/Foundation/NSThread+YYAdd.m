@@ -32,7 +32,7 @@ static inline void YYAutoreleasePoolPush() {
         dic[YYNSThreadAutoleasePoolStackKey] = poolStack;
         CFRelease(poolStack);
     }
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; //< create
     [poolStack addObject:pool]; // push
 }
 
@@ -41,7 +41,7 @@ static inline void YYAutoreleasePoolPop() {
     NSMutableArray *poolStack = dic[YYNSThreadAutoleasePoolStackKey];
     NSAutoreleasePool *pool = [poolStack lastObject];
     [poolStack removeLastObject]; // pop
-    [pool release];
+    [pool release]; //< release, may get warning in analyze...
 }
 
 static void YYRunLoopAutoreleasePoolObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
@@ -61,28 +61,23 @@ static void YYRunLoopAutoreleasePoolObserverCallBack(CFRunLoopObserverRef observ
 }
 
 static void YYRunloopAutoreleasePoolSetup() {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        CFRunLoopRef runloop = CFRunLoopGetCurrent();
-
-        CFRunLoopObserverRef pushObserver;
-        pushObserver = CFRunLoopObserverCreate(CFAllocatorGetDefault(),
-                                               kCFRunLoopEntry,
-                                               true,         // repeat
-                                               -0x7FFFFFFF,  // before other observers
-                                               YYRunLoopAutoreleasePoolObserverCallBack, NULL);
-        CFRunLoopAddObserver(runloop, pushObserver, kCFRunLoopCommonModes);
-        CFRelease(pushObserver);
-
-        CFRunLoopObserverRef popObserver;
-        popObserver = CFRunLoopObserverCreate(CFAllocatorGetDefault(),
-                                              kCFRunLoopBeforeWaiting | kCFRunLoopExit,
-                                              true,        // repeat
-                                              0x7FFFFFFF,  // after other observers
-                                              YYRunLoopAutoreleasePoolObserverCallBack, NULL);
-        CFRunLoopAddObserver(runloop, popObserver, kCFRunLoopCommonModes);
-        CFRelease(popObserver);
-    });
+    CFRunLoopRef runloop = CFRunLoopGetCurrent();
+    
+    CFRunLoopObserverRef pushObserver;
+    pushObserver = CFRunLoopObserverCreate(CFAllocatorGetDefault(), kCFRunLoopEntry,
+                                           true,         // repeat
+                                           -0x7FFFFFFF,  // before other observers
+                                           YYRunLoopAutoreleasePoolObserverCallBack, NULL);
+    CFRunLoopAddObserver(runloop, pushObserver, kCFRunLoopCommonModes);
+    CFRelease(pushObserver);
+    
+    CFRunLoopObserverRef popObserver;
+    popObserver = CFRunLoopObserverCreate(CFAllocatorGetDefault(), kCFRunLoopBeforeWaiting | kCFRunLoopExit,
+                                          true,        // repeat
+                                          0x7FFFFFFF,  // after other observers
+                                          YYRunLoopAutoreleasePoolObserverCallBack, NULL);
+    CFRunLoopAddObserver(runloop, popObserver, kCFRunLoopCommonModes);
+    CFRelease(popObserver);
 }
 
 @implementation NSThread (YYAdd)

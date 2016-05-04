@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Provides extensions for `UIDevice`.
  */
@@ -23,7 +25,7 @@
 ///=============================================================================
 
 /// Device system version (e.g. 8.1)
-+ (float)systemVersion;
++ (double)systemVersion;
 
 /// Whether the device is iPad/iPad mini.
 @property (nonatomic, readonly) BOOL isPad;
@@ -55,12 +57,59 @@
 ///=============================================================================
 
 /// WIFI IP address of this device (can be nil). e.g. @"192.168.1.111"
-@property (nonatomic, readonly) NSString *ipAddressWIFI;
+@property (nullable, nonatomic, readonly) NSString *ipAddressWIFI;
 
 /// Cell IP address of this device (can be nil). e.g. @"10.2.2.222"
-@property (nonatomic, readonly) NSString *ipAddressCell;
+@property (nullable, nonatomic, readonly) NSString *ipAddressCell;
 
 
+/**
+ Network traffic type:
+ 
+ WWAN: Wireless Wide Area Network.
+       For example: 3G/4G.
+ 
+ WIFI: Wi-Fi.
+ 
+ AWDL: Apple Wireless Direct Link (peer-to-peer connection).
+       For exmaple: AirDrop, AirPlay, GameKit.
+ */
+typedef NS_OPTIONS(NSUInteger, YYNetworkTrafficType) {
+    YYNetworkTrafficTypeWWANSent     = 1 << 0,
+    YYNetworkTrafficTypeWWANReceived = 1 << 1,
+    YYNetworkTrafficTypeWIFISent     = 1 << 2,
+    YYNetworkTrafficTypeWIFIReceived = 1 << 3,
+    YYNetworkTrafficTypeAWDLSent     = 1 << 4,
+    YYNetworkTrafficTypeAWDLReceived = 1 << 5,
+    
+    YYNetworkTrafficTypeWWAN = YYNetworkTrafficTypeWWANSent | YYNetworkTrafficTypeWWANReceived,
+    YYNetworkTrafficTypeWIFI = YYNetworkTrafficTypeWIFISent | YYNetworkTrafficTypeWIFIReceived,
+    YYNetworkTrafficTypeAWDL = YYNetworkTrafficTypeAWDLSent | YYNetworkTrafficTypeAWDLReceived,
+    
+    YYNetworkTrafficTypeALL = YYNetworkTrafficTypeWWAN |
+                              YYNetworkTrafficTypeWIFI |
+                              YYNetworkTrafficTypeAWDL,
+};
+
+/**
+ Get device network traffic bytes.
+ 
+ @discussion This is a counter since the device's last boot time.
+ Usage:
+ 
+     uint64_t bytes = [[UIDevice currentDevice] getNetworkTrafficBytes:YYNetworkTrafficTypeALL];
+     NSTimeInterval time = CACurrentMediaTime();
+     
+     uint64_t bytesPerSecond = (bytes - _lastBytes) / (time - _lastTime);
+     
+     _lastBytes = bytes;
+     _lastTime = time;
+ 
+ 
+ @param type traffic types
+ @return bytes counter.
+ */
+- (uint64_t)getNetworkTrafficBytes:(YYNetworkTrafficType)types;
 
 #pragma mark - Disk Space
 ///=============================================================================
@@ -115,10 +164,11 @@
 @property (nonatomic, readonly) float cpuUsage;
 
 /// Current CPU usage per processor (array of NSNumber), 1.0 means 100%. (nil when error occurs)
-@property (nonatomic, readonly) NSArray *cpuUsagePerProcessor;
+@property (nullable, nonatomic, readonly) NSArray<NSNumber *> *cpuUsagePerProcessor;
 
 @end
 
+NS_ASSUME_NONNULL_END
 
 #ifndef kSystemVersion
 #define kSystemVersion [UIDevice systemVersion]

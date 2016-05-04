@@ -1,6 +1,0 @@
-module Aspects {
-  umbrella header "Aspects-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -12,15 +12,16 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 /// Create an `ARGB` Bitmap context. Returns NULL if an error occurs.
 ///
 /// @discussion The function is same as UIGraphicsBeginImageContextWithOptions(),
 /// but it doesn't push the context to UIGraphic, so you can retain the context for reuse.
-CGContextRef YYCGContextCreateARGBBitmapContext(CGSize size, BOOL opaque, CGFloat scale);
+CGContextRef _Nullable YYCGContextCreateARGBBitmapContext(CGSize size, BOOL opaque, CGFloat scale);
 
 /// Create a `DeviceGray` Bitmap context. Returns NULL if an error occurs.
-CGContextRef YYCGContextCreateGrayBitmapContext(CGSize size, CGFloat scale);
+CGContextRef _Nullable YYCGContextCreateGrayBitmapContext(CGSize size, CGFloat scale);
 
 
 
@@ -106,12 +107,12 @@ NSString *YYUIViewContentModeToCAGravity(UIViewContentMode contentMode);
 
 
 /**
- Resize rect to fit the size using a given contentMode.
+ Returns a rectangle to fit the @param rect with specified content mode.
  
- @param rect The draw rect
+ @param rect The constrant rect
  @param size The content size
  @param mode The content mode
- @return A resized rect for the given content mode.
+ @return A rectangle for the given content mode.
  @discussion UIViewContentModeRedraw is same as UIViewContentModeScaleToFill.
  */
 CGRect YYCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode);
@@ -325,3 +326,5 @@ static inline UIEdgeInsets UIEdgeInsetPixelCeil(UIEdgeInsets insets) {
 #ifndef kScreenHeight
 #define kScreenHeight YYScreenSize().height
 #endif
+
+NS_ASSUME_NONNULL_END

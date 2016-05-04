@@ -71,6 +71,30 @@ static dispatch_once_t onceToken;
     }];
 }
 
+//上传图片
+- (void)uploadImage{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *fileString = [NSString stringWithFormat:@"%@",[bundle bundlePath]];
+    
+    BmobFile *file = [[BmobFile alloc]initWithFilePath:fileString];
+    
+    [BmobFile filesUploadBatchWithPaths:@[file] progressBlock:^(int index, float progress) {
+        //index 上传数组的下标，progress当前文件的进度
+        NSLog(@"index %d progress %f",index,progress);
+
+    } resultBlock:^(NSArray *array, BOOL isSuccessful, NSError *error) {
+        //array 文件数组，isSuccessful 成功或者失败,error 错误信息
+        BmobObject *obj = [[BmobObject alloc]initWithClassName:@"travels"];
+        for (int i = 0 ; i < array.count ;i ++) {
+            BmobFile *file = array [i];
+            NSString *key = [NSString stringWithFormat:@"userFile%d",i];
+            [obj setObject:file  forKey:key];
+        }
+        [obj saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        }];
+    }];
+}
+
 #pragma mark - Request
 //test request
 - (void)send_TestRequestWithParameters:(NSDictionary *)parameters{

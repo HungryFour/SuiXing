@@ -114,16 +114,17 @@
                                                              delegate:self
                                                     cancelButtonTitle:@"取消"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"拍照", @"从相册选取", nil];
+                                                    otherButtonTitles:@"写游记", nil];
     [actionSheet showInView:viewController.view];
 }
 
 #pragma mark - UIActionSheetDelegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    selectImageViewController *vc = [[selectImageViewController alloc]init];
-    [self.cyl_tabBarController presentViewController:vc animated:YES completion:nil];
-
+    if (buttonIndex == 0) {
+        selectImageViewController *vc = [[selectImageViewController alloc]init];
+        [self.cyl_tabBarController presentViewController:vc animated:YES completion:nil];
+    }
 }
 
 #pragma mark - CYLPlusButtonSubclassing
