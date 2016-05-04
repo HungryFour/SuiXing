@@ -12,9 +12,10 @@
 #import "SXIndexHeaderView.h"
 #import "TopicRoadCell.h"
 #import "LoginViewController.h"
+#import "TopicRoadViewController.h"
 
 
-@interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
+@interface IndexViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,YSLTransitionAnimatorDataSource>
 
 @property (strong, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *imageArray;
@@ -155,21 +156,16 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     _currentIndexPath = indexPath;
     if (indexPath.section == 2) {
-//        BrowsePictureViewController *vc = [[BrowsePictureViewController alloc]init];
-//        self.navigationController.delegate = vc;
-//        [self.navigationController pushViewController:vc animated:YES];
-        NSLog(@"click item : %ld", indexPath.row);
+        TopicRoadViewController *vc = [[TopicRoadViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
 - (UIImageView *)pushTransitionImageView
 {
-    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] firstObject]];
-    if ([cell isKindOfClass:[TopicRoadCell class]]) {
-        TopicRoadCell *roadCell = (TopicRoadCell *)cell;
-        return roadCell.imageView;
-    }
-    return nil;
+    TopicRoadCell *roadCell = (TopicRoadCell *)[self.collectionView cellForItemAtIndexPath:[[self.collectionView indexPathsForSelectedItems] firstObject]];
+    return roadCell.imageView;
+    
 }
 
 - (UIImageView *)popTransitionImageView

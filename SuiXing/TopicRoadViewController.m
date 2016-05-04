@@ -8,20 +8,71 @@
 
 #import "TopicRoadViewController.h"
 
-@interface TopicRoadViewController ()
+@interface TopicRoadViewController () <YSLTransitionAnimatorDataSource>
+
+@property (strong, nonatomic) UIImageView *headerImageView;
 
 @end
 
 @implementation TopicRoadViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self ysl_removeTransitionDelegate];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self ysl_addTransitionDelegate:self];
+    [self ysl_popTransitionAnimationWithCurrentScrollView:nil
+                                    cancelAnimationPointY:0
+                                        animationDuration:0.3
+                                  isInteractiveTransition:YES];
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.view addSubview:self.headerImageView];
+
+    
+    CGRect rect = [UIScreen mainScreen].bounds;
+    float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    float navigationHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    // header
+    // If you're using a xib and storyboard. Be sure to specify the frame
+    self.headerImageView.frame = CGRectMake(0, statusHeight + navigationHeight, rect.size.width, 250);
+
+    // custom navigation left item
+    __weak TopicRoadViewController *weakself = self;
+    [self ysl_setUpReturnBtnWithColor:[UIColor lightGrayColor]
+                      callBackHandler:^{
+                          [weakself.navigationController popViewControllerAnimated:YES];
+                      }];
+    self.title = @"主题路线";
+    self.view.backgroundColor = [UIColor whiteColor];
+}
+
+#pragma mark -- YSLTransitionAnimatorDataSource
+- (UIImageView *)popTransitionImageView
+{
+    return self.headerImageView;
+}
+
+- (UIImageView *)pushTransitionImageView
+{
+    return nil;
+}
+
+- (UIImageView *)headerImageView{
+    if (!_headerImageView) {
+        _headerImageView = [[UIImageView alloc]init];
+        
+    }
+    return _headerImageView;
 }
 
 /*
