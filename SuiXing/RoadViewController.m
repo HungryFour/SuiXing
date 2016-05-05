@@ -14,6 +14,7 @@
 #import "RoadModel.h"
 #import "SetRoadViewController.h"
 #import "CommitOrderViewController.h"
+#import "MapViewController.h"
 
 @interface RoadViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -82,9 +83,13 @@
 }
 
 - (void)commitOrderClick{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"订单已经生成" message:@"请到我的订单中去查看" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alert show];
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    MapViewController *mapVC = [[MapViewController alloc]init];
+    [self.navigationController pushViewController:mapVC animated:YES];
+
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"订单已经生成" message:@"请到我的订单中去查看" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//    [alert show];
+//    [self.navigationController popViewControllerAnimated:YES];
 
 }
 
