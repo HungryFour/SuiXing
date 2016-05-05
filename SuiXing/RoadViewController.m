@@ -85,6 +85,11 @@
 - (void)commitOrderClick{
     
     MapViewController *mapVC = [[MapViewController alloc]init];
+    mapVC.cityArray = @[@"北京",
+                        @"济南",
+                        @"青岛",
+                        @"南京",
+                        @"上海"];
     [self.navigationController pushViewController:mapVC animated:YES];
 
 //    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"订单已经生成" message:@"请到我的订单中去查看" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

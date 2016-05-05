@@ -33,7 +33,7 @@
 		20AB5CFB1CDADEEB00B0706A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AB5CFA1CDADEEB00B0706A /* OpenGLES.framework */; };
 		20AB5CFD1CDADF0A00B0706A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AB5CFC1CDADF0A00B0706A /* libsqlite3.0.tbd */; };
 		20AB5CFF1CDADF1C00B0706A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AB5CFE1CDADF1C00B0706A /* libstdc++.6.0.9.tbd */; };
-		20AB5D051CDAE05800B0706A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20AB5D041CDAE05800B0706A /* MapViewController.m */; };
+		20AB5D051CDAE05800B0706A /* MapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20AB5D041CDAE05800B0706A /* MapViewController.mm */; };
 		2FE857F81C9657A6007E9B04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857F71C9657A6007E9B04 /* main.m */; };
 		2FE857FB1C9657A6007E9B04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FA1C9657A6007E9B04 /* AppDelegate.m */; };
 		2FE857FE1C9657A6007E9B04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE857FD1C9657A6007E9B04 /* ViewController.m */; };
@@ -247,7 +247,7 @@
 		20AB5CFC1CDADF0A00B0706A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		20AB5CFE1CDADF1C00B0706A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		20AB5D031CDAE05800B0706A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		20AB5D041CDAE05800B0706A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		20AB5D041CDAE05800B0706A /* MapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapViewController.mm; sourceTree = "<group>"; };
 		2FE857F31C9657A6007E9B04 /* SuiXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuiXing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE857F71C9657A6007E9B04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FE857F91C9657A6007E9B04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -715,7 +715,7 @@
 			children = (
 				D33147941CC7631000906A60 /* 选择路线 */,
 				20AB5D031CDAE05800B0706A /* MapViewController.h */,
-				20AB5D041CDAE05800B0706A /* MapViewController.m */,
+				20AB5D041CDAE05800B0706A /* MapViewController.mm */,
 				2FE858311C965954007E9B04 /* IndexViewController.h */,
 				2FE858321C965954007E9B04 /* IndexViewController.m */,
 				D3F6023B1CC9FB5500580CBC /* MoreNewRoadViewController.h */,
@@ -1650,7 +1650,7 @@
 				D3F14E111CC8A99E001D39C8 /* SetRoadViewController.m in Sources */,
 				0AE682CB1CD211FF00C2B3DA /* CYLTabBar.m in Sources */,
 				D38509F51CCDED9F0046326B /* MF_NetAPIClient.m in Sources */,
-				20AB5D051CDAE05800B0706A /* MapViewController.m in Sources */,
+				20AB5D051CDAE05800B0706A /* MapViewController.mm in Sources */,
 				0AE682CA1CD211FF00C2B3DA /* CYLTabBarController.m in Sources */,
 				D3C730F31CD9F00500CDDF4F /* UIViewController+YSLTransition.m in Sources */,
 				D3F6023D1CC9FB5500580CBC /* MoreNewRoadViewController.m in Sources */,
